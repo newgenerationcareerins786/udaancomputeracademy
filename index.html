@@ -95,7 +95,7 @@
         .logo { font-size: 24px; font-weight: 800; color: var(--primary); display: flex; align-items: center; gap: 10px; }
         .logo span { color: var(--secondary); }
         .logo i { font-size: 32px; color: var(--secondary); }
-        .logo img { max-height: 65px; width: auto; object-fit: contain; } /* Logo Image CSS */
+        .logo img { max-height: 65px; width: auto; object-fit: contain; }
 
         nav ul { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; justify-content: center; }
         nav ul li a { color: var(--primary); font-weight: 600; font-size: 14px; text-transform: uppercase; letter-spacing: 0.5px; transition: var(--transition); position: relative; }
@@ -287,9 +287,74 @@
         .footer-bottom-links a { color: #8a94a6; margin-left: 20px; font-size: 14px; transition: var(--transition); }
         .footer-bottom-links a:hover { color: var(--white); }
 
-        @media (max-width: 1024px) { nav ul { gap: 10px; } nav ul li a {font-size: 12px;} }
-        @media (max-width: 991px) { .footer-top { grid-template-columns: 1fr 1fr; } }
-        @media (max-width: 768px) { nav {display:none;} /* Note: Mobile menu toggle needed in real prod */ .footer-top { grid-template-columns: 1fr; } .footer-bottom { justify-content: center; } }
+        /* ================= MOBILE RESPONSIVE (UPDATED) ================= */
+        @media (max-width: 1024px) {
+            nav ul { gap: 10px; }
+            nav ul li a { font-size: 12px; }
+        }
+        @media (max-width: 991px) {
+            .footer-top { grid-template-columns: 1fr 1fr; }
+            .hero-content h1 { font-size: 45px; }
+        }
+        @media (max-width: 768px) {
+            /* Top Bar */
+            .top-bar { flex-direction: column; gap: 10px; text-align: center; }
+            .top-bar .contact-info span { display: block; margin: 5px 0 !important; }
+
+            /* Header & Scrollable Nav (No HTML Change Required) */
+            header { flex-direction: column; padding: 15px; }
+            nav { display: block !important; width: 100%; margin-top: 15px; overflow-x: auto; padding-bottom: 10px; }
+            nav::-webkit-scrollbar { height: 4px; }
+            nav::-webkit-scrollbar-thumb { background: var(--secondary); border-radius: 4px; }
+            nav ul { flex-wrap: nowrap; justify-content: flex-start; gap: 15px; padding-bottom: 5px; }
+            nav ul li { flex-shrink: 0; }
+
+            /* Hero Section */
+            .hero-content h1 { font-size: 32px; }
+            .hero-content p { font-size: 16px; }
+            .btn-hero { padding: 12px 20px; font-size: 14px; margin: 10px 5px; }
+
+            /* Stats */
+            .stats-wrapper { margin-top: -30px; padding: 20px; gap: 15px; flex-direction: column; }
+            .stat-item h3 { font-size: 28px; }
+
+            /* Sections */
+            section { padding: 60px 5%; }
+            .section-header h2 { font-size: 28px; }
+
+            /* About Section */
+            #about { gap: 30px; text-align: center; }
+            .about-content h2 { font-size: 28px; }
+
+            /* Courses & Grids */
+            .course-container, .features-grid, .faculty-grid, .zone-grid, .testi-grid { grid-template-columns: 1fr; }
+
+            /* Admission Steps */
+            .steps-container { gap: 20px; }
+            .step-box { width: 100%; }
+
+            /* Verification Form */
+            .verify-form { flex-direction: column; }
+            .verify-btn { padding: 15px; margin-top: 10px; }
+
+            /* Footer */
+            .footer-top { grid-template-columns: 1fr; text-align: center; }
+            .footer-social, .footer-contact li, .footer-links a, .footer-brand .logo { justify-content: center; }
+            .footer-title::after { left: 50%; transform: translateX(-50%); }
+            .footer-bottom { flex-direction: column; text-align: center; }
+            .footer-bottom-links a { margin: 10px; display: inline-block; }
+
+            /* Modal */
+            .modal-content { width: 95%; margin: 10px; }
+            .modal-body { padding: 20px; }
+            .modal-footer { flex-direction: column; gap: 10px; text-align: center; font-size: 15px; }
+        }
+        @media (max-width: 480px) {
+            .hero-content h1 { font-size: 28px; }
+            .btn-hero { display: block; width: 100%; margin: 10px 0; }
+            .news-form { flex-direction: column; gap: 10px; }
+            .news-form input, .news-form button { border-radius: 5px; width: 100%; }
+        }
     </style>
 </head>
 <body>
