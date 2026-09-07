@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Udaan Computer Academy | Advanced IT Education</title>
+    <title>Udaan Computer Academy | Premium IT Education</title>
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -75,7 +75,7 @@
         /* ================= HERO SECTION ================= */
         #home {
             height: 90vh;
-            background: linear-gradient(rgba(10,25,47,0.85), rgba(10,25,47,0.85)), url('https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=2070&auto=format&fit=crop') center/cover fixed;
+            background: linear-gradient(rgba(10,25,47,0.85), rgba(10,25,47,0.85)), url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2070&auto=format&fit=crop') center/cover fixed;
             display: flex; align-items: center; justify-content: center; text-align: center; color: var(--white);
         }
         .hero-content h1 { font-size: 65px; font-weight: 800; line-height: 1.2; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 2px; }
@@ -88,35 +88,19 @@
         .btn-hero.outline { background: transparent; border-color: var(--white); color: var(--white); }
         .btn-hero.outline:hover { background: var(--white); color: var(--primary); }
 
-        /* ================= STATS COUNTER ================= */
-        .stats-wrapper { display: flex; justify-content: space-around; background: var(--white); padding: 40px 5%; margin-top: -50px; position: relative; z-index: 10; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); max-width: 1200px; margin-inline: auto; }
-        .stat-item { text-align: center; }
-        .stat-item i { font-size: 40px; color: var(--secondary); margin-bottom: 15px; }
-        .stat-item h3 { font-size: 35px; color: var(--primary); font-weight: 800; }
-        .stat-item p { font-size: 14px; color: #666; font-weight: 600; text-transform: uppercase; }
-
-        /* ================= ABOUT US ================= */
-        #about { display: flex; align-items: center; gap: 60px; background: var(--white); }
-        .about-image { flex: 1; position: relative; }
-        .about-image img { width: 100%; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.15); }
-        .about-content { flex: 1; }
-        .about-content h3 { font-size: 24px; color: var(--secondary); margin-bottom: 10px; text-transform: uppercase; }
-        .about-content h2 { font-size: 40px; color: var(--primary); font-weight: 800; margin-bottom: 25px; line-height: 1.2; }
-        .about-content p { color: #555; margin-bottom: 20px; font-size: 16px; }
-
-        /* ================= WHY CHOOSE US ================= */
-        #why-us { background: var(--bg-light); }
+        /* ================= ABOUT & FEATURES ================= */
+        #why-us { background: var(--white); }
         .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
-        .feature-box { background: var(--white); padding: 40px 30px; border-radius: 15px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: var(--transition); border-bottom: 4px solid transparent; }
-        .feature-box:hover { transform: translateY(-10px); border-color: var(--secondary); }
+        .feature-box { background: var(--bg-light); padding: 40px 30px; border-radius: 15px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: var(--transition); border-bottom: 4px solid transparent; }
+        .feature-box:hover { transform: translateY(-10px); border-color: var(--secondary); background: var(--white); box-shadow: 0 15px 40px rgba(0,0,0,0.1); }
         .feature-box i { font-size: 45px; color: var(--secondary); margin-bottom: 20px; }
-        .feature-box h3 { font-size: 20px; color: var(--primary); margin-bottom: 15px; }
+        .feature-box h3 { font-size: 20px; color: var(--primary); margin-bottom: 15px; font-weight: 700; }
         .feature-box p { color: #666; font-size: 14px; }
 
-        /* ================= COURSES SECTION ================= */
-        #courses { background: var(--white); }
+        /* ================= DYNAMIC COURSES ================= */
+        #courses { background: var(--bg-light); }
         .course-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
-        .course-card { background: var(--bg-light); border-radius: 15px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: var(--transition); border: 1px solid #eee; position: relative; cursor: pointer; }
+        .course-card { background: var(--white); border-radius: 15px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: var(--transition); border: 1px solid #eee; position: relative; cursor: pointer; }
         .course-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); border-color: var(--secondary); }
         .course-badge { position: absolute; top: 20px; right: 20px; background: var(--secondary); color: var(--white); padding: 5px 15px; border-radius: 20px; font-size: 12px; font-weight: 700; text-transform: uppercase; z-index: 2; }
         .course-icon { background: var(--primary-light); height: 160px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
@@ -125,8 +109,9 @@
         .course-icon i { font-size: 65px; color: var(--white); z-index: 1; transition: var(--transition); }
         .course-card:hover .course-icon i { transform: scale(1.1); color: var(--secondary); }
         .course-info { padding: 30px; }
-        .course-info h3 { font-size: 22px; color: var(--primary); margin-bottom: 10px; font-weight: 700; }
-        .course-info p { color: #666; font-size: 14px; margin-bottom: 20px; }
+        .course-info h3 { font-size: 20px; color: var(--primary); margin-bottom: 10px; font-weight: 700; }
+        .course-meta { display: flex; justify-content: space-between; margin-bottom: 15px; font-size: 13px; font-weight: 600; color: #555; border-bottom: 1px solid #eee; padding-bottom: 15px; }
+        .course-meta span i { color: var(--secondary); margin-right: 5px; }
         .btn-view-details { background: var(--primary); color: var(--white); padding: 10px 20px; border-radius: 5px; width: 100%; border: none; font-weight: 600; cursor: pointer; transition: var(--transition); }
         .course-card:hover .btn-view-details { background: var(--secondary); }
 
@@ -137,36 +122,14 @@
         .modal-overlay.active .modal-content { transform: translateY(0); }
         .close-modal { position: absolute; top: 20px; right: 25px; font-size: 30px; color: var(--text-gray); cursor: pointer; transition: var(--transition); }
         .close-modal:hover { color: var(--secondary); transform: rotate(90deg); }
-        .modal-header h2 { color: var(--primary); font-size: 28px; font-weight: 800; border-bottom: 2px solid var(--bg-light); padding-bottom: 15px; margin-bottom: 20px; }
+        .modal-header h2 { color: var(--primary); font-size: 26px; font-weight: 800; border-bottom: 2px solid var(--bg-light); padding-bottom: 15px; margin-bottom: 20px; }
         .modal-body ul { padding-left: 20px; margin-bottom: 20px; }
-        .modal-body ul li { margin-bottom: 10px; color: #555; position: relative; list-style: none; }
+        .modal-body ul li { margin-bottom: 10px; color: #444; font-size: 15px; position: relative; list-style: none; }
         .modal-body ul li::before { content: '\f00c'; font-family: 'Font Awesome 6 Free'; font-weight: 900; color: var(--secondary); position: absolute; left: -25px; top: 2px; }
-        .modal-footer { display: flex; justify-content: space-between; align-items: center; background: var(--bg-light); padding: 15px 20px; border-radius: 10px; margin-top: 20px; font-weight: 600; color: var(--primary); }
+        .modal-footer { display: flex; justify-content: space-between; align-items: center; background: var(--primary-light); padding: 15px 20px; border-radius: 10px; margin-top: 20px; font-weight: 600; color: var(--white); }
+        .modal-footer span i { color: var(--secondary-light); margin-right: 8px; }
 
-        /* ================= TESTIMONIALS ================= */
-        #testimonials { background: var(--gradient); color: var(--white); }
-        #testimonials .section-header h2, #testimonials .section-header p { color: var(--white); }
-        #testimonials .divider { background: var(--white); }
-        .testi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .testi-card { background: rgba(255,255,255,0.1); padding: 30px; border-radius: 15px; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2); }
-        .testi-card i.fa-quote-left { font-size: 30px; color: rgba(255,255,255,0.3); margin-bottom: 15px; display: block; }
-        .testi-card p { font-size: 15px; font-style: italic; margin-bottom: 20px; }
-        .testi-user { display: flex; align-items: center; gap: 15px; }
-        .testi-user img { width: 50px; height: 50px; border-radius: 50%; border: 2px solid var(--white); }
-        .testi-user h4 { font-size: 16px; font-weight: 700; }
-        .testi-user span { font-size: 12px; color: #ccc; }
-
-        /* ================= CERTIFICATE VERIFICATION ================= */
-        #verify { background: var(--white); text-align: center; }
-        .verify-wrapper { max-width: 700px; margin: 0 auto; background: var(--bg-light); padding: 50px; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.05); border-top: 5px solid var(--secondary); }
-        .verify-wrapper i.fa-shield-alt { font-size: 60px; color: var(--secondary); margin-bottom: 20px; }
-        .verify-form { display: flex; gap: 10px; margin-top: 30px; }
-        .verify-form input { flex: 1; padding: 15px 25px; border: 2px solid #ddd; border-radius: 8px; font-size: 16px; outline: none; transition: var(--transition); }
-        .verify-form input:focus { border-color: var(--primary); }
-        .verify-btn { background: var(--primary); color: var(--white); border: none; padding: 0 40px; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; transition: var(--transition); }
-        .verify-btn:hover { background: var(--secondary); }
-
-        /* ================= POWERFUL FOOTER (DAMDAR FOOTER) ================= */
+        /* ================= POWERFUL FOOTER ================= */
         footer { background: #020610; color: #8a94a6; padding: 80px 5% 0; font-size: 15px; position: relative; overflow: hidden; }
         footer::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 5px; background: var(--gradient); }
         
@@ -228,11 +191,8 @@
         <nav>
             <ul>
                 <li><a href="#home" class="active">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#courses">Courses</a></li>
                 <li><a href="#why-us">Features</a></li>
-                <li><a href="#testimonials">Reviews</a></li>
-                <li><a href="#verify">Verify</a></li>
+                <li><a href="#courses">Our Courses</a></li>
                 <li><a href="#footer" class="btn-glow">Contact Us</a></li>
             </ul>
         </nav>
@@ -242,124 +202,163 @@
     <section id="home">
         <div class="hero-content">
             <h1>Launch Your Career With <br><span>Udaan Academy</span></h1>
-            <p>100% Practical IT Training. Get certified in modern tech, design, and accounting to secure your dream job in the digital world.</p>
+            <p>100% Practical IT Training. Explore our completely structured modular courses designed to secure your digital future.</p>
             <div style="margin-top: 30px;">
-                <a href="#courses" class="btn-hero primary">View Courses</a>
-                <a href="#verify" class="btn-hero outline">Certificate Verification</a>
+                <a href="#courses" class="btn-hero primary">View All Courses</a>
             </div>
         </div>
     </section>
 
-    <!-- ================= STATS ================= -->
-    <div class="stats-wrapper">
-        <div class="stat-item"><i class="fas fa-chalkboard-teacher"></i><h3 class="counter" data-target="15">0</h3><p>Expert Faculty</p></div>
-        <div class="stat-item"><i class="fas fa-user-graduate"></i><h3 class="counter" data-target="3500">0</h3><p>Students Placed</p></div>
-        <div class="stat-item"><i class="fas fa-certificate"></i><h3 class="counter" data-target="100">0</h3><p>ISO Certified</p></div>
-    </div>
-
-    <!-- ================= ABOUT US ================= -->
-    <section id="about">
-        <div class="about-image">
-            <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=2070&auto=format&fit=crop" alt="Campus">
-        </div>
-        <div class="about-content">
-            <h3>About Us</h3>
-            <h2>Empowering Minds, <br>Transforming Lives.</h2>
-            <p>उड़ान कंप्यूटर एकेडमी एक मान्यता प्राप्त और प्रीमियम एजुकेशन सेंटर है। हम छात्रों को बेसिक कंप्यूटर से लेकर एडवांस कोडिंग, डिजाइनिंग और एकाउंटिंग की 100% प्रैक्टिकल ट्रेनिंग देते हैं।</p>
-            <p>हमारा उद्देश्य सिर्फ सर्टिफिकेट देना नहीं, बल्कि आपको जॉब-रेडी बनाना है। हमारी मॉडर्न लैब और अनुभवी टीचर्स आपको हर कदम पर गाइड करते हैं।</p>
-        </div>
-    </section>
-
-    <!-- ================= WHY CHOOSE US ================= -->
-    <section id="why-us">
-        <div class="section-header">
-            <h2>Why Choose <span>Us?</span></h2>
-            <div class="divider"></div>
-            <p style="margin-top:15px;">We provide a learning environment that sets you up for absolute success.</p>
-        </div>
-        <div class="features-grid">
-            <div class="feature-box"><i class="fas fa-project-diagram"></i><h3>Live Projects</h3><p>Learn by working on real-world industry projects.</p></div>
-            <div class="feature-box"><i class="fas fa-briefcase"></i><h3>100% Job Assistance</h3><p>Dedicated placement cell to help you get hired.</p></div>
-            <div class="feature-box"><i class="fas fa-globe"></i><h3>Global Certification</h3><p>ISO Certified diplomas valid in Govt & Private sectors.</p></div>
-            <div class="feature-box"><i class="fas fa-wifi"></i><h3>Smart Classes</h3><p>Air-conditioned labs with high-speed Wi-Fi access.</p></div>
-        </div>
-    </section>
-
-    <!-- ================= DYNAMIC COURSES ================= -->
+    <!-- ================= DYNAMIC COURSES (Fully Separated) ================= -->
     <section id="courses">
         <div class="section-header">
-            <h2>Our Premium <span>Courses</span></h2>
+            <h2>Our Complete <span>Courses</span></h2>
             <div class="divider"></div>
-            <p style="margin-top:15px;">Click on any course to view full details, syllabus, and fee structure.</p>
+            <p style="margin-top:15px;">Click on any course below to view the detailed syllabus, correct duration, and fee structure.</p>
         </div>
+        
         <div class="course-container">
             
-            <!-- Course 1 -->
+            <!-- 1. Basic -->
             <div class="course-card" onclick="openModal('basic')">
-                <span class="course-badge">Basic</span>
+                <span class="course-badge">Foundation</span>
                 <div class="course-icon"><i class="fas fa-desktop"></i></div>
                 <div class="course-info">
                     <h3>True Basic of Computer</h3>
-                    <p>Master the fundamentals of computing and MS Office.</p>
-                    <button class="btn-view-details">Click to View Content <i class="fas fa-arrow-right" style="margin-left:8px;"></i></button>
+                    <div class="course-meta">
+                        <span><i class="fas fa-clock"></i> 6 Months</span>
+                        <span><i class="fas fa-rupee-sign"></i> 6,000</span>
+                    </div>
+                    <button class="btn-view-details">View Syllabus <i class="fas fa-arrow-right" style="margin-left:8px;"></i></button>
                 </div>
             </div>
 
-            <!-- Course 2 -->
+            <!-- 2. Web Development -->
             <div class="course-card" onclick="openModal('web')">
                 <span class="course-badge">Trending</span>
                 <div class="course-icon"><i class="fas fa-code"></i></div>
                 <div class="course-info">
                     <h3>True Web Developer</h3>
-                    <p>Become a full-stack programmer with HTML, CSS, PHP.</p>
-                    <button class="btn-view-details">Click to View Content <i class="fas fa-arrow-right" style="margin-left:8px;"></i></button>
+                    <div class="course-meta">
+                        <span><i class="fas fa-clock"></i> 6 Months</span>
+                        <span><i class="fas fa-rupee-sign"></i> 17,000</span>
+                    </div>
+                    <button class="btn-view-details">View Syllabus <i class="fas fa-arrow-right" style="margin-left:8px;"></i></button>
                 </div>
             </div>
 
-            <!-- Course 3 -->
+            <!-- 3. Graphic Designing -->
             <div class="course-card" onclick="openModal('graphic')">
                 <span class="course-badge">Creative</span>
                 <div class="course-icon"><i class="fas fa-paint-brush"></i></div>
                 <div class="course-info">
                     <h3>True Graphic Designing</h3>
-                    <p>Professional design training with Photoshop & CorelDraw.</p>
-                    <button class="btn-view-details">Click to View Content <i class="fas fa-arrow-right" style="margin-left:8px;"></i></button>
+                    <div class="course-meta">
+                        <span><i class="fas fa-clock"></i> 6 Months</span>
+                        <span><i class="fas fa-rupee-sign"></i> 15,000</span>
+                    </div>
+                    <button class="btn-view-details">View Syllabus <i class="fas fa-arrow-right" style="margin-left:8px;"></i></button>
                 </div>
             </div>
 
-            <!-- Course 4 -->
+            <!-- 4. Tally -->
             <div class="course-card" onclick="openModal('tally')">
                 <span class="course-badge">Finance</span>
                 <div class="course-icon"><i class="fas fa-file-invoice-dollar"></i></div>
                 <div class="course-info">
                     <h3>Tally ERP 9 & Prime</h3>
-                    <p>Complete GST, Taxation and Inventory Management.</p>
-                    <button class="btn-view-details">Click to View Content <i class="fas fa-arrow-right" style="margin-left:8px;"></i></button>
+                    <div class="course-meta">
+                        <span><i class="fas fa-clock"></i> 6 Months</span>
+                        <span><i class="fas fa-rupee-sign"></i> 14,500</span>
+                    </div>
+                    <button class="btn-view-details">View Syllabus <i class="fas fa-arrow-right" style="margin-left:8px;"></i></button>
                 </div>
             </div>
 
-            <!-- Course 5 -->
+            <!-- 5. ADCA -->
             <div class="course-card" onclick="openModal('adca')">
-                <span class="course-badge">Diploma</span>
+                <span class="course-badge">Advanced</span>
                 <div class="course-icon"><i class="fas fa-laptop-code"></i></div>
                 <div class="course-info">
-                    <h3>ADCA / DCA / DOAP</h3>
-                    <p>Advanced Diploma programs for guaranteed office jobs.</p>
-                    <button class="btn-view-details">Click to View Content <i class="fas fa-arrow-right" style="margin-left:8px;"></i></button>
+                    <h3>ADCA</h3>
+                    <div class="course-meta">
+                        <span><i class="fas fa-clock"></i> 12 Months</span>
+                        <span><i class="fas fa-rupee-sign"></i> 20,000</span>
+                    </div>
+                    <button class="btn-view-details">View Syllabus <i class="fas fa-arrow-right" style="margin-left:8px;"></i></button>
                 </div>
             </div>
 
-            <!-- Course 6 -->
-            <div class="course-card" onclick="openModal('olevel')">
-                <span class="course-badge">Govt Valid</span>
-                <div class="course-icon"><i class="fas fa-graduation-cap"></i></div>
+            <!-- 6. DCA -->
+            <div class="course-card" onclick="openModal('dca')">
+                <span class="course-badge">Diploma</span>
+                <div class="course-icon"><i class="fas fa-laptop"></i></div>
                 <div class="course-info">
-                    <h3>O Level / CCC</h3>
-                    <p>NIELIT certified courses for government job applications.</p>
-                    <button class="btn-view-details">Click to View Content <i class="fas fa-arrow-right" style="margin-left:8px;"></i></button>
+                    <h3>DCA</h3>
+                    <div class="course-meta">
+                        <span><i class="fas fa-clock"></i> 6 Months</span>
+                        <span><i class="fas fa-rupee-sign"></i> 12,000</span>
+                    </div>
+                    <button class="btn-view-details">View Syllabus <i class="fas fa-arrow-right" style="margin-left:8px;"></i></button>
                 </div>
             </div>
             
+            <!-- 7. DOAP -->
+            <div class="course-card" onclick="openModal('doap')">
+                <span class="course-badge">Office Job</span>
+                <div class="course-icon"><i class="fas fa-print"></i></div>
+                <div class="course-info">
+                    <h3>DOAP</h3>
+                    <div class="course-meta">
+                        <span><i class="fas fa-clock"></i> 12 Months</span>
+                        <span><i class="fas fa-rupee-sign"></i> 15,000</span>
+                    </div>
+                    <button class="btn-view-details">View Syllabus <i class="fas fa-arrow-right" style="margin-left:8px;"></i></button>
+                </div>
+            </div>
+
+            <!-- 8. O Level -->
+            <div class="course-card" onclick="openModal('olevel')">
+                <span class="course-badge">Govt Cert.</span>
+                <div class="course-icon"><i class="fas fa-user-graduate"></i></div>
+                <div class="course-info">
+                    <h3>O Level (NIELIT)</h3>
+                    <div class="course-meta">
+                        <span><i class="fas fa-clock"></i> 12 Months</span>
+                        <span>Govt. Fee</span>
+                    </div>
+                    <button class="btn-view-details">View Syllabus <i class="fas fa-arrow-right" style="margin-left:8px;"></i></button>
+                </div>
+            </div>
+
+            <!-- 9. CCC -->
+            <div class="course-card" onclick="openModal('ccc')">
+                <span class="course-badge">Essentials</span>
+                <div class="course-icon"><i class="fas fa-certificate"></i></div>
+                <div class="course-info">
+                    <h3>CCC (NIELIT)</h3>
+                    <div class="course-meta">
+                        <span><i class="fas fa-clock"></i> 3 Months</span>
+                        <span>Govt. Fee</span>
+                    </div>
+                    <button class="btn-view-details">View Syllabus <i class="fas fa-arrow-right" style="margin-left:8px;"></i></button>
+                </div>
+            </div>
+            
+            <!-- 10. PGDCA -->
+            <div class="course-card" onclick="openModal('pgdca')">
+                <span class="course-badge">Post Grad.</span>
+                <div class="course-icon"><i class="fas fa-university"></i></div>
+                <div class="course-info">
+                    <h3>PGDCA</h3>
+                    <div class="course-meta">
+                        <span><i class="fas fa-clock"></i> 12 Months</span>
+                        <span><i class="fas fa-rupee-sign"></i> 25,000</span>
+                    </div>
+                    <button class="btn-view-details">View Syllabus <i class="fas fa-arrow-right" style="margin-left:8px;"></i></button>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -371,70 +370,18 @@
                 <h2 id="modalTitle">Course Title</h2>
             </div>
             <div class="modal-body" id="modalBody">
-                <!-- Data will be injected here via JS -->
+                <!-- Dynamic Content injected via JS -->
             </div>
             <div class="modal-footer" id="modalFooter">
-                <!-- Meta info -->
+                <!-- Meta Details injected via JS -->
             </div>
         </div>
     </div>
-
-    <!-- ================= TESTIMONIALS ================= -->
-    <section id="testimonials">
-        <div class="section-header">
-            <h2>Student <span>Success</span></h2>
-            <div class="divider"></div>
-            <p style="margin-top:15px;">Hear what our proud alumni have to say about their journey.</p>
-        </div>
-        <div class="testi-grid">
-            <div class="testi-card">
-                <i class="fas fa-quote-left"></i>
-                <p>"Udaan Academy completely transformed my career. The Web Development training was 100% practical. I got a job even before my course ended!"</p>
-                <div class="testi-user">
-                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User">
-                    <div><h4>Rahul Singh</h4><span>Frontend Developer</span></div>
-                </div>
-            </div>
-            <div class="testi-card">
-                <i class="fas fa-quote-left"></i>
-                <p>"Tally Prime classes are the best in the city. The teachers explain GST and taxation with live company data which is very helpful."</p>
-                <div class="testi-user">
-                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="User">
-                    <div><h4>Pooja Sharma</h4><span>Accountant</span></div>
-                </div>
-            </div>
-            <div class="testi-card">
-                <i class="fas fa-quote-left"></i>
-                <p>"I completed my O-Level here and passed in the first attempt. The mock tests and study material provided by the academy are outstanding."</p>
-                <div class="testi-user">
-                    <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="User">
-                    <div><h4>Amit Verma</h4><span>Govt. Aspirant</span></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ================= CERTIFICATE VERIFICATION ================= -->
-    <section id="verify">
-        <div class="section-header">
-            <h2>Verify <span>Certificate</span></h2>
-            <div class="divider"></div>
-            <p style="margin-top:15px;">Check authenticity of student certificates instantly from our secure database.</p>
-        </div>
-        <div class="verify-wrapper">
-            <i class="fas fa-shield-alt"></i>
-            <form class="verify-form" onsubmit="event.preventDefault(); alert('Connecting to Server... Certificate Verified!');">
-                <input type="text" placeholder="Enter Reg No. / Roll No." required>
-                <button type="submit" class="verify-btn"><i class="fas fa-check-circle"></i> Validate</button>
-            </form>
-        </div>
-    </section>
 
     <!-- ================= POWERFUL FOOTER ================= -->
     <footer id="footer">
         <div class="footer-top">
             
-            <!-- Column 1: Brand & About -->
             <div class="footer-brand">
                 <h2 class="logo"><i class="fas fa-laptop-code"></i> उड़ान <span>एकेडमी</span></h2>
                 <p>Empowering the youth with premium IT skills. From deep coding to advanced accounting, we are committed to providing the highest quality education and securing your digital future.</p>
@@ -442,50 +389,36 @@
                     <a href="#"><i class="fab fa-facebook-f"></i></a>
                     <a href="#"><i class="fab fa-instagram"></i></a>
                     <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
                 </div>
             </div>
 
-            <!-- Column 2: Quick Links -->
             <div>
                 <h3 class="footer-title">Quick Links</h3>
                 <ul class="footer-links">
-                    <li><a href="#about">About Academy</a></li>
+                    <li><a href="#home">Home Page</a></li>
                     <li><a href="#courses">All Courses</a></li>
-                    <li><a href="#verify">Certificate Verification</a></li>
-                    <li><a href="#testimonials">Success Stories</a></li>
-                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Certificate Verification</a></li>
+                    <li><a href="#">Student Login</a></li>
                 </ul>
             </div>
 
-            <!-- Column 3: Top Courses -->
             <div>
                 <h3 class="footer-title">Top Courses</h3>
                 <ul class="footer-links">
-                    <li><a href="#courses" onclick="openModal('web')">Web Development</a></li>
-                    <li><a href="#courses" onclick="openModal('tally')">Tally Prime & GST</a></li>
-                    <li><a href="#courses" onclick="openModal('graphic')">Graphic Designing</a></li>
-                    <li><a href="#courses" onclick="openModal('adca')">ADCA Diploma</a></li>
-                    <li><a href="#courses" onclick="openModal('olevel')">O Level / CCC</a></li>
+                    <li><a href="javascript:void(0)" onclick="openModal('web')">Web Development</a></li>
+                    <li><a href="javascript:void(0)" onclick="openModal('tally')">Tally Prime & GST</a></li>
+                    <li><a href="javascript:void(0)" onclick="openModal('adca')">ADCA Master Course</a></li>
+                    <li><a href="javascript:void(0)" onclick="openModal('olevel')">NIELIT O Level</a></li>
                 </ul>
             </div>
 
-            <!-- Column 4: Contact & Newsletter -->
             <div>
                 <h3 class="footer-title">Contact Us</h3>
                 <ul class="footer-contact">
-                    <!-- Update: New Address and Phone -->
                     <li><i class="fas fa-map-marker-alt"></i> <span>Ward No 8, Lausari Dargah Road,<br>Rahat Colony Ke Samne,<br>Sitarganj, Udham Singh Nagar,<br>Uttarakhand - 262405</span></li>
                     <li><i class="fas fa-phone-alt"></i> <span>+91 701768365</span></li>
                     <li><i class="fas fa-envelope"></i> <span>info@udaanacademy.com</span></li>
                 </ul>
-                <div class="footer-newsletter">
-                    <p>Subscribe to our newsletter for latest updates & offers.</p>
-                    <form class="news-form" onsubmit="event.preventDefault(); alert('Subscribed Successfully!');">
-                        <input type="email" placeholder="Email Address" required>
-                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
-                    </form>
-                </div>
             </div>
 
         </div>
@@ -494,72 +427,21 @@
             <p>&copy; <span id="year"></span> <span>Udaan Computer Academy</span>. All Rights Reserved.</p>
             <div class="footer-bottom-links">
                 <a href="#">Privacy Policy</a>
-                <a href="#">Refund Policy</a>
-                <a href="#">Sitemap</a>
+                <a href="#">Terms of Service</a>
             </div>
         </div>
     </footer>
 
     <!-- ================= JAVASCRIPT ================= -->
     <script>
-        // 1. Dynamic Footer Year
         document.getElementById('year').innerText = new Date().getFullYear();
 
-        // 2. Smooth Scrolling & Active Links
-        const sections = document.querySelectorAll('section');
-        const navLinks = document.querySelectorAll('nav ul li a');
-
-        window.addEventListener('scroll', () => {
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                if (pageYOffset >= (sectionTop - 150)) {
-                    current = section.getAttribute('id');
-                }
-            });
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href').includes(current)) {
-                    link.classList.add('active');
-                }
-            });
-        });
-
-        // 3. Number Counter Animation
-        const counters = document.querySelectorAll('.counter');
-        let counterStarted = false;
-        
-        window.addEventListener('scroll', () => {
-            const statsSection = document.querySelector('.stats-wrapper');
-            if(statsSection) {
-                const sectionPos = statsSection.getBoundingClientRect().top;
-                const screenPos = window.innerHeight;
-                if(sectionPos < screenPos && !counterStarted) {
-                    counters.forEach(counter => {
-                        const target = +counter.getAttribute('data-target');
-                        const speed = target / 100; 
-                        const updateCount = () => {
-                            const count = +counter.innerText;
-                            if (count < target) {
-                                counter.innerText = Math.ceil(count + speed);
-                                setTimeout(updateCount, 20);
-                            } else {
-                                counter.innerText = target + "+";
-                            }
-                        };
-                        updateCount();
-                    });
-                    counterStarted = true;
-                }
-            }
-        });
-
-        // ================= COURSE DATA OBJECT =================
+        // Separate and Detailed Course Data
         const courseData = {
             'basic': {
                 title: 'True Basic of Computer',
-                duration: '3 Months',
-                fee: '₹ 2,500',
+                duration: '6 Months',
+                fee: '₹ 6,000',
                 content: `
                     <ul>
                         <li>Computer Fundamentals & History</li>
@@ -572,83 +454,142 @@
                     </ul>`
             },
             'web': {
-                title: 'True Web Developer (Full Stack)',
+                title: 'True Web Developer (Web Designing)',
                 duration: '6 Months',
-                fee: '₹ 8,000',
+                fee: '₹ 17,000',
                 content: `
                     <ul>
-                        <li>HTML5 & CSS3 Architecture</li>
+                        <li>HTML5 & CSS3 Architecture & Layouts</li>
                         <li>JavaScript (ES6+) & DOM Manipulation</li>
-                        <li>Responsive Design with Bootstrap 5</li>
+                        <li>Responsive Web Design with Bootstrap 5</li>
                         <li>Backend Programming with PHP</li>
                         <li>Database Management with MySQL</li>
-                        <li>Web Hosting & Domain Setup</li>
-                        <li>Live E-commerce Project Deployment</li>
+                        <li>Web Hosting, cPanel & Domain Setup</li>
+                        <li>Live Dynamic Website Project Deployment</li>
                     </ul>`
             },
             'graphic': {
                 title: 'True Graphic Designing',
-                duration: '4 Months',
-                fee: '₹ 6,500',
+                duration: '6 Months',
+                fee: '₹ 15,000',
                 content: `
                     <ul>
                         <li>Design Fundamentals & Color Theory</li>
-                        <li>Adobe Photoshop (Photo Editing, Retouching)</li>
+                        <li>Adobe Photoshop (Photo Editing, Retouching, Posters)</li>
                         <li>CorelDraw (Vector Graphics, Printing Press work)</li>
                         <li>Adobe Illustrator (Logos, Icons, Illustrations)</li>
-                        <li>Canva Pro (Social Media Post Creation)</li>
-                        <li>Typography & UI/UX Basics</li>
-                        <li>Portfolio Creation & Freelancing Tips</li>
+                        <li>Social Media Post Creation & Branding</li>
+                        <li>Typography & UI/UX Principles</li>
+                        <li>Portfolio Creation for Freelancing</li>
                     </ul>`
             },
             'tally': {
                 title: 'Tally ERP 9 & Tally Prime',
-                duration: '3 Months',
-                fee: '₹ 4,000',
+                duration: '6 Months',
+                fee: '₹ 14,500',
                 content: `
                     <ul>
                         <li>Manual Accounting Fundamentals & Golden Rules</li>
-                        <li>Company Creation & Ledger Management</li>
+                        <li>Company Creation, Alteration & Ledger Management</li>
                         <li>Inventory Management & Godown Transfer</li>
-                        <li>GST (CGST, SGST, IGST) Implementation & Returns</li>
-                        <li>TDS, TCS & Payroll Management</li>
+                        <li>GST (CGST, SGST, IGST) Computation & Returns</li>
+                        <li>TDS, TCS & Payroll Management System</li>
                         <li>Bank Reconciliation Statement (BRS)</li>
-                        <li>Final Accounts (Balance Sheet, P&L)</li>
+                        <li>Final Accounts (Balance Sheet, P&L, Trial Balance)</li>
                     </ul>`
             },
             'adca': {
-                title: 'ADCA / DCA / DOAP',
-                duration: '6 to 12 Months',
-                fee: '₹ 10,000',
+                title: 'ADCA (Advance Diploma in Computer Application)',
+                duration: '12 Months',
+                fee: '₹ 20,000',
                 content: `
                     <ul>
-                        <li>Computer Basics & MS Office Mastery</li>
-                        <li>Programming Concept (C / C++ or HTML)</li>
-                        <li>Financial Accounting with Tally Prime</li>
-                        <li>DTP (Desktop Publishing) - Photoshop, PageMaker</li>
-                        <li>Hardware Maintenance & Networking Basics</li>
-                        <li>Internet & E-Commerce Technologies</li>
-                        <li>Personality Development & Interview Skills</li>
+                        <li>Complete IT Tools and Network Basics</li>
+                        <li>Advanced MS Office Suite Mastery</li>
+                        <li>Financial Accounting with Tally Prime & GST</li>
+                        <li>DTP (Desktop Publishing) - Photoshop & CorelDraw</li>
+                        <li>Web Designing Concepts (HTML/CSS)</li>
+                        <li>Internet Technologies & Cyber Security</li>
+                        <li>Complete Job-Ready Interview Skills</li>
+                    </ul>`
+            },
+            'dca': {
+                title: 'DCA (Diploma in Computer Application)',
+                duration: '6 Months',
+                fee: '₹ 12,000',
+                content: `
+                    <ul>
+                        <li>Computer Fundamentals & Operating Systems</li>
+                        <li>MS Office (Word, Excel, PowerPoint, Access)</li>
+                        <li>Basic Internet Concepts & Email Management</li>
+                        <li>Fundamentals of Multimedia and Design</li>
+                        <li>Basic Financial Accounting Concepts</li>
+                        <li>Data Entry Operations and Typing Speed Building</li>
+                    </ul>`
+            },
+            'doap': {
+                title: 'DOAP (Diploma in Office Automation & Publishing)',
+                duration: '12 Months',
+                fee: '₹ 15,000',
+                content: `
+                    <ul>
+                        <li>Fundamentals of Computer & OS</li>
+                        <li>Office Automation Packages (Advanced Excel/Word)</li>
+                        <li>Database Management Concepts (MS Access)</li>
+                        <li>DTP - PageMaker, CorelDraw, and Photoshop</li>
+                        <li>Basic Web Publishing and Internet Browsing</li>
+                        <li>Financial Accounting basics (Tally ERP)</li>
+                        <li>Practical assignments for Back Office Jobs</li>
                     </ul>`
             },
             'olevel': {
-                title: 'O Level / CCC (NIELIT)',
-                duration: '3 to 12 Months',
-                fee: 'Varies',
+                title: 'O Level (NIELIT Certified)',
+                duration: '12 Months',
+                fee: 'As per Govt. Fee structure',
                 content: `
                     <ul>
                         <li>M1-R5: IT Tools and Network Basics</li>
                         <li>M2-R5: Web Designing and Publishing</li>
                         <li>M3-R5: Programming and Problem Solving through Python</li>
                         <li>M4-R5: Internet of Things (IoT) and its Applications</li>
-                        <li>CCC Course completely covered</li>
-                        <li>Online Mock Tests & Old Paper Solutions</li>
-                        <li>Practical & Project Submission Guidance</li>
+                        <li>Practical Preparation (PR-1)</li>
+                        <li>Project Work Submission (PJ-1)</li>
+                        <li>Previous Year Question Papers & Mock Tests</li>
+                    </ul>`
+            },
+            'ccc': {
+                title: 'CCC (Course on Computer Concepts)',
+                duration: '3 Months',
+                fee: 'As per Govt. Fee structure',
+                content: `
+                    <ul>
+                        <li>Introduction to Computer & GUI based OS</li>
+                        <li>Elements of Word Processing (LibreOffice Writer)</li>
+                        <li>Spreadsheets (LibreOffice Calc)</li>
+                        <li>Computer Communication and Internet</li>
+                        <li>WWW and Web Browsers</li>
+                        <li>Communication and Collaboration</li>
+                        <li>Application of Digital Financial Services</li>
+                    </ul>`
+            },
+            'pgdca': {
+                title: 'PGDCA (Post Graduate Diploma in Computer App.)',
+                duration: '12 Months',
+                fee: '₹ 25,000',
+                content: `
+                    <ul>
+                        <li>Advanced Computer Organization and Architecture</li>
+                        <li>Programming in C and C++ / Java</li>
+                        <li>Relational Database Management System (Oracle/MySQL)</li>
+                        <li>Software Engineering and Project Management</li>
+                        <li>Web Technologies and App Development Basics</li>
+                        <li>Operating System Concepts (Linux/Windows)</li>
+                        <li>Major Project Work and Submission</li>
                     </ul>`
             }
         };
 
-        // ================= MODAL FUNCTIONALITY =================
+        // Modal Logic
         const modal = document.getElementById('courseModal');
         const modalTitle = document.getElementById('modalTitle');
         const modalBody = document.getElementById('modalBody');
@@ -660,15 +601,14 @@
             modalBody.innerHTML = data.content;
             modalFooter.innerHTML = `<span><i class="fas fa-clock"></i> Duration: ${data.duration}</span> <span><i class="fas fa-rupee-sign"></i> Fee: ${data.fee}</span>`;
             modal.classList.add('active');
-            document.body.style.overflow = 'hidden'; // Stop background scrolling
+            document.body.style.overflow = 'hidden'; 
         }
 
         function closeModal() {
             modal.classList.remove('active');
-            document.body.style.overflow = 'auto'; // Enable scrolling
+            document.body.style.overflow = 'auto'; 
         }
 
-        // Close modal on clicking outside the box
         modal.addEventListener('click', function(e) {
             if (e.target === modal) {
                 closeModal();
