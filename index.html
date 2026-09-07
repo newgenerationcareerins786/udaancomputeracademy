@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Udaan Computer Academy | Premium IT Education</title>
+    
+    <!-- Google Fonts: Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* CSS Reset & Variables */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        :root {
+            --primary: #0a192f;
+            --secondary: #ff3366;
+            --text-light: #ffffff;
+            --text-dark: #333333;
+            --bg-light: #f8f9fa;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        /* Top Bar */
+        .top-bar {
+            background: var(--primary);
+            color: var(--text-light);
+            padding: 10px 50px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+        }
+        
+        .top-bar i { margin-right: 5px; color: var(--secondary); }
+
+        /* Navigation Bar */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 15px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span { color: var(--secondary); }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul li {
+            position: relative;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 500;
+            font-size: 16px;
+            padding: 10px 0;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--secondary);
+        }
+
+        /* Dropdown Menu */
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #fff;
+            width: 250px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-radius: 5px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: 0.3s;
+            z-index: 100;
+        }
+
+        nav ul li:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-menu li {
+            margin: 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .dropdown-menu li a {
+            padding: 12px 20px;
+            display: block;
+            font-size: 14px;
+            color: var(--text-dark);
+        }
+
+        .dropdown-menu li a:hover {
+            background: var(--bg-light);
+            color: var(--secondary);
+            padding-left: 25px;
+        }
+
+        .btn-login {
+            background: var(--secondary);
+            color: #fff !important;
+            padding: 10px 25px !important;
+            border-radius: 30px;
+            font-weight: 600;
+        }
+        
+        .btn-login:hover {
+            background: #e62e5c;
+            color: #fff !important;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 90vh;
+            background: linear-gradient(rgba(10, 25, 47, 0.8), rgba(10, 25, 47, 0.8)), url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2070&auto=format&fit=crop') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--text-light);
+            padding: 0 20px;
+        }
+
+        .hero-content h1 {
+            font-size: 55px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            animation: fadeInDown 1s ease;
+        }
+
+        .hero-content h1 span {
+            color: var(--secondary);
+        }
+
+        .hero-content p {
+            font-size: 18px;
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-inline: auto;
+            color: #ccc;
+            animation: fadeInUp 1s ease;
+        }
+
+        .btn-primary {
+            background: var(--secondary);
+            color: #fff;
+            padding: 15px 35px;
+            border: none;
+            border-radius: 30px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            transition: 0.3s;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 51, 102, 0.3);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: #fff;
+            padding: 14px 33px;
+            border: 2px solid #fff;
+            border-radius: 30px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            transition: 0.3s;
+            margin-left: 15px;
+        }
+
+        .btn-outline:hover {
+            background: #fff;
+            color: var(--primary);
+        }
+
+        /* Features Section */
+        .features {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 50px;
+            margin-top: -60px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .feature-box {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            width: 300px;
+            transition: 0.3s;
+        }
+
+        .feature-box:hover {
+            transform: translateY(-10px);
+            border-bottom: 4px solid var(--secondary);
+        }
+
+        .feature-box i {
+            font-size: 40px;
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
+
+        /* Keyframes */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div>
+            <i class="fas fa-envelope"></i> info@udaanacademy.com
+            <i class="fas fa-phone" style="margin-left:15px;"></i> +91 9876543210
+        </div>
+        <div>
+            <i class="fas fa-map-marker-alt"></i> India's Leading Computer Institute
+        </div>
+    </div>
+
+    <!-- Header & Navigation -->
+    <header>
+        <a href="index.html" class="logo">
+            <i class="fas fa-laptop-code"></i> उड़ान <span>एकेडमी</span>
+        </a>
+        
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li>
+                    <a href="#">Courses <i class="fas fa-chevron-down" style="font-size:12px;"></i></a>
+                    <!-- Courses Dropdown -->
+                    <ul class="dropdown-menu">
+                        <li><a href="#">True Basic of Computer</a></li>
+                        <li><a href="#">True Web Developer</a></li>
+                        <li><a href="#">True Graphic Designing</a></li>
+                        <li><a href="#">Tally ERP 9 & Tally Prime</a></li>
+                        <li><a href="#">ADCA (Advance Diploma)</a></li>
+                        <li><a href="#">DCA (Diploma in Computer)</a></li>
+                        <li><a href="#">DOAP</a></li>
+                        <li><a href="#">O Level</a></li>
+                        <li><a href="#">CCC</a></li>
+                        <li><a href="#">PGDCA</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Gallery</a></li>
+                <li><a href="#">Certificate Verification</a></li>
+                <li>
+                    <a href="#">Student Zone <i class="fas fa-chevron-down" style="font-size:12px;"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Exam Portal</a></li>
+                        <li><a href="#">Study Material</a></li>
+                        <li><a href="#">Result</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" class="btn-login">Login/Register</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Build Your Future with <br><span>Udaan Computer Academy</span></h1>
+            <p>भारत का प्रीमियम कंप्यूटर कोचिंग इंस्टिट्यूट। बेसिक से लेकर एडवांस लेवल तक की ट्रेनिंग, 100% प्रैक्टिकल नॉलेज और अनुभवी फैकल्टी के साथ अपने करियर को दें नई उड़ान।</p>
+            <a href="#" class="btn-primary">Explore Courses</a>
+            <a href="#" class="btn-outline">Verify Certificate</a>
+        </div>
+    </section>
+
+    <!-- Highlights/Features -->
+    <section class="features">
+        <div class="feature-box">
+            <i class="fas fa-chalkboard-teacher"></i>
+            <h3>Expert Faculty</h3>
+            <p>Learn from industry experts with years of practical experience.</p>
+        </div>
+        <div class="feature-box">
+            <i class="fas fa-laptop"></i>
+            <h3>100% Practical</h3>
+            <p>Hands-on training with live projects and assignments.</p>
+        </div>
+        <div class="feature-box">
+            <i class="fas fa-certificate"></i>
+            <h3>ISO Certified</h3>
+            <p>Globally recognized certificate after course completion.</p>
+        </div>
+    </section>
+
+</body>
+</html>
