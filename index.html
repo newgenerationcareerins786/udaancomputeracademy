@@ -111,9 +111,9 @@
         }
 
         @keyframes logoShine {
-            0% { filter: drop-shadow(0 0 5px var(--neon-blue)) drop-shadow(0 0 10px var(--neon-purple)); transform: scale(1); }
-            50% { filter: drop-shadow(0 0 15px var(--neon-blue)) drop-shadow(0 0 25px var(--neon-pink)); transform: scale(1.02); }
-            100% { filter: drop-shadow(0 0 5px var(--neon-blue)) drop-shadow(0 0 10px var(--neon-purple)); transform: scale(1); }
+            0% { filter: drop-shadow(0 0 10px var(--neon-blue)) drop-shadow(0 0 15px var(--neon-purple)); transform: scale(1); }
+            50% { filter: drop-shadow(0 0 20px var(--neon-blue)) drop-shadow(0 0 35px var(--neon-pink)); transform: scale(1.03); }
+            100% { filter: drop-shadow(0 0 10px var(--neon-blue)) drop-shadow(0 0 15px var(--neon-purple)); transform: scale(1); }
         }
 
         @keyframes borderPulse {
@@ -165,35 +165,32 @@
                         0 0 20px rgba(0, 240, 255, 0.3), 
                         inset 0 0 15px rgba(255, 0, 85, 0.2);
             position: sticky; top: 15px; z-index: 1000;
-            border-radius: 50px; 
+            border-radius: 60px; 
             width: 95%; margin: 0 auto;
             transition: var(--transition);
             animation: boxGlow 4s infinite alternate;
         }
         
-        /* UPDATED LOGO WITH CIRCLE AND OUTLINED TEXT */
+        /* UPDATED LOGO (BIGGER CIRCLE, NO TEXT) */
         .logo { 
-            font-size: 22px; font-weight: 900; color: #fff; display: flex; align-items: center; gap: 15px; 
-            text-transform: uppercase; letter-spacing: 1px; transition: transform 0.4s ease; 
-            text-shadow: 0 0 10px rgba(0,240,255,0.8), 0 0 20px rgba(0,240,255,0.5);
-        }
-        .logo-text { line-height: 1.1; -webkit-text-stroke: 1px var(--neon-blue); /* Clear shining outline on name */ }
-        .logo-text span { 
-            background: var(--gradient-2); -webkit-background-clip: text; -webkit-text-fill-color: transparent; 
-            -webkit-text-stroke: 0px; text-shadow: 0 0 15px var(--neon-pink); display: block; font-size: 16px;
+            display: flex; align-items: center; justify-content: center;
+            transition: transform 0.4s ease; 
         }
         .logo img { 
-            height: 60px; width: 60px; object-fit: cover; 
-            border-radius: 50%; /* Make logo circle */
-            border: 2px solid var(--neon-blue); /* Outline on circle */
-            box-shadow: 0 0 15px var(--neon-blue), inset 0 0 10px var(--neon-blue);
-            background: #fff; padding: 3px;
+            height: 85px; /* Bigger Logo */
+            width: 85px;  /* Bigger Logo */
+            object-fit: cover; 
+            border-radius: 50%; /* Perfect Circle */
+            border: 3px solid var(--neon-blue); /* Clear shining outline */
+            box-shadow: 0 0 20px var(--neon-blue), inset 0 0 15px var(--neon-blue);
+            background: #fff; padding: 4px;
             animation: logoShine 3s infinite alternate; 
         }
-        .logo:hover { transform: scale(1.05) rotate(-2deg); }
-        .logo:hover img { animation: none; filter: drop-shadow(0 0 25px var(--neon-blue)) drop-shadow(0 0 20px var(--neon-pink)); }
+        .logo:hover { transform: scale(1.1) rotate(-5deg); }
+        .logo:hover img { animation: none; filter: drop-shadow(0 0 35px var(--neon-blue)) drop-shadow(0 0 25px var(--neon-pink)); }
 
         /* Menu Zoom In & Zoom Out Magic */
+        nav { display: block; }
         nav ul { display: flex; align-items: center; gap: 5px; flex-wrap: wrap; justify-content: center; }
         nav ul:hover li a { transform: scale(0.85); opacity: 0.3; filter: blur(2px); }
 
@@ -226,6 +223,17 @@
             animation: borderPulse 2s infinite, gradientPan 3s ease infinite; transition: var(--transition);
         }
         nav ul li a.btn-glow:hover { transform: translateY(-3px) scale(1.25) !important; box-shadow: 0 0 35px var(--neon-orange), inset 0 0 20px #fff; border-color: #fff; }
+
+        /* Mobile Hamburger Icon (Hidden on Desktop) */
+        .menu-toggle {
+            display: none;
+            color: #fff;
+            font-size: 32px;
+            cursor: pointer;
+            text-shadow: var(--glow-blue);
+            transition: var(--transition);
+        }
+        .menu-toggle:hover { color: var(--neon-pink); text-shadow: var(--glow-pink); transform: scale(1.1); }
 
         /* ================= COMMON SECTION STYLES ================= */
         section { padding: 100px 5%; position: relative; z-index: 1; }
@@ -321,37 +329,47 @@
         /* ================= 6. ADMISSIONS ================= */
         .steps-container { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin-top: 60px; }
         .step-box { background: linear-gradient(to bottom, rgba(255,255,255,0.05), transparent); padding: 50px 40px; border-radius: 25px; width: 260px; border: 1px solid rgba(176, 38, 255, 0.3); transition: var(--transition); text-align: center; position: relative; backdrop-filter: blur(10px); }
-        .step-box:hover { transform: translateY(-15px); border-color: var(--neon-purple); box-shadow: 0 0 30px rgba(176,38,255,0.5), inset 0 0 15px rgba(176,38,255,0.2); }
+        .step-box:hover { transform: translateY(-15px); border-color: var(--neon-purple); box-shadow: 0 10px 40px rgba(176,38,255,0.5), inset 0 0 15px rgba(176,38,255,0.2); }
         .step-box i { font-size: 55px; margin-bottom: 25px; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .step-box h3 { font-size: 22px; margin-bottom: 15px; font-weight: 800; color: var(--text-light); }
         .step-box p { font-size: 15px; color: var(--text-gray); }
 
-        /* ================= 7. MANAGEMENT TEAM (NEW SECTION) ================= */
+        /* ================= 7. MANAGEMENT TEAM ================= */
         #management { background: rgba(0,0,0,0.2); }
-        .faculty-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 40px; }
-        .faculty-card { 
-            text-align: center; background: rgba(255,255,255,0.03); border-radius: 25px; padding: 40px 30px; 
+        /* Used same grid styling as faculty but adapted for two items */
+        .management-grid { display: flex; justify-content: center; gap: 60px; flex-wrap: wrap; margin-top: 40px; }
+        .management-card { 
+            text-align: center; background: rgba(255,255,255,0.03); border-radius: 25px; padding: 40px 30px; width: 350px;
             transition: var(--transition); border: 1px solid rgba(0, 240, 255, 0.2); backdrop-filter: blur(15px); box-shadow: 0 10px 20px rgba(0,0,0,0.3);
         }
-        .faculty-card:hover { transform: translateY(-15px) scale(1.02); border: 2px solid var(--neon-pink); box-shadow: 0 0 30px var(--neon-pink), inset 0 0 10px rgba(255,0,85,0.3); }
-        .faculty-img { 
-            width: 130px; height: 130px; border-radius: 50%; margin: 0 auto 25px; 
+        .management-card:hover { transform: translateY(-15px) scale(1.02); border: 2px solid var(--neon-pink); box-shadow: 0 0 30px var(--neon-pink), inset 0 0 10px rgba(255,0,85,0.3); }
+        .management-img { 
+            width: 150px; height: 150px; border-radius: 50%; margin: 0 auto 25px; 
             background: var(--bg-base); display: flex; align-items: center; justify-content: center; 
             border: 4px solid transparent; background-clip: padding-box; position: relative; box-shadow: inset 0 0 20px rgba(0,0,0,0.8);
         }
+        .management-img::before { content:''; position: absolute; inset: -4px; border-radius: 50%; background: var(--gradient-2); z-index: -1; animation: auroraMove 5s linear infinite; }
+        .management-img img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; position: relative; z-index: 2; border: 2px solid transparent; }
+        .management-card h3 { color: var(--text-light); font-size: 26px; margin-bottom: 5px; font-weight: 800; }
+        .management-card span { color: var(--neon-orange); font-weight: 700; font-size: 16px; display: block; margin-bottom: 20px; letter-spacing: 1px; text-transform: uppercase; }
+
+        /* ================= 8. FACULTY ================= */
+        .faculty-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 40px; }
+        .faculty-card { text-align: center; background: rgba(255,255,255,0.03); border-radius: 25px; padding: 40px 30px; transition: var(--transition); border: 1px solid rgba(0, 240, 255, 0.2); backdrop-filter: blur(15px); box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
+        .faculty-card:hover { transform: translateY(-15px) scale(1.02); border: 2px solid var(--neon-pink); box-shadow: 0 0 30px var(--neon-pink), inset 0 0 10px rgba(255,0,85,0.3); }
+        .faculty-img { width: 130px; height: 130px; border-radius: 50%; margin: 0 auto 25px; background: var(--bg-base); display: flex; align-items: center; justify-content: center; border: 4px solid transparent; background-clip: padding-box; position: relative; box-shadow: inset 0 0 20px rgba(0,0,0,0.8); }
         .faculty-img::before { content:''; position: absolute; inset: -4px; border-radius: 50%; background: var(--gradient-2); z-index: -1; animation: auroraMove 5s linear infinite; }
         .faculty-img i { font-size: 55px; color: var(--text-light); }
-        .faculty-img img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; position: relative; z-index: 2; border: 2px solid transparent; }
         .faculty-card h3 { color: var(--text-light); font-size: 24px; margin-bottom: 5px; font-weight: 800; }
         .faculty-card span { color: var(--neon-orange); font-weight: 700; font-size: 15px; display: block; margin-bottom: 20px; letter-spacing: 1px; text-transform: uppercase; }
 
-        /* ================= 8. PLACEMENT & RECRUITERS ================= */
+        /* ================= 9. PLACEMENT & RECRUITERS ================= */
         .recruiters { display: flex; justify-content: space-around; flex-wrap: wrap; gap: 40px; margin-top: 50px; background: rgba(255,255,255,0.02); padding: 40px; border-radius: 20px; border: 1px solid rgba(176, 38, 255, 0.4); box-shadow: 0 0 20px rgba(176, 38, 255, 0.1); }
         .recruiter-logo { font-size: 35px; font-weight: 900; color: var(--text-gray); display: flex; align-items: center; gap: 15px; transition: var(--transition); filter: grayscale(100%) opacity(0.5); cursor: pointer; }
         .recruiter-logo:hover { filter: grayscale(0%) opacity(1); transform: scale(1.1); color: var(--text-light); text-shadow: var(--glow-mixed); }
         .recruiter-logo i { font-size: 45px; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 
-        /* ================= 9. STUDENT ZONE ================= */
+        /* ================= 10. STUDENT ZONE ================= */
         .zone-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; }
         .zone-card { background: var(--gradient-1); padding: 50px 40px; border-radius: 25px; color: #000; text-align: center; position: relative; overflow: hidden; z-index: 1; transition: var(--transition); border: 2px solid transparent; box-shadow: 0 0 20px rgba(0,240,255,0.4); }
         .zone-card:nth-child(2) { background: var(--gradient-2); box-shadow: 0 0 20px rgba(255,0,85,0.4); }
@@ -368,7 +386,7 @@
         .zone-card:nth-child(1) button:hover { background: var(--gradient-1); border-color: #fff; color: #000; box-shadow: var(--glow-blue); }
         .zone-card:nth-child(2) button:hover { background: var(--gradient-2); border-color: #fff; color: #fff; box-shadow: var(--glow-pink); }
 
-        /* ================= 10. GALLERY ================= */
+        /* ================= 11. GALLERY ================= */
         .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
         .gallery-item { position: relative; height: 280px; border-radius: 20px; overflow: hidden; background: rgba(255,255,255,0.02); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.1); font-size: 60px; border: 2px solid rgba(0, 240, 255, 0.2); transition: var(--transition); }
         .gallery-overlay { position: absolute; inset: 0; background: var(--gradient-2); display: flex; align-items: center; justify-content: center; opacity: 0; transition: var(--transition); cursor: pointer; mix-blend-mode: color-dodge; }
@@ -377,7 +395,7 @@
         .gallery-overlay i { font-size: 40px; color: #fff; transform: translateY(20px); transition: 0.4s ease; }
         .gallery-item:hover .gallery-overlay i { transform: translateY(0); filter: drop-shadow(0 0 15px #fff); }
 
-        /* ================= 11. TESTIMONIALS ================= */
+        /* ================= 12. TESTIMONIALS ================= */
         .testi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; }
         .testi-card { background: rgba(255,255,255,0.03); padding: 40px; border-radius: 25px; border: 1px solid rgba(255, 0, 85, 0.3); backdrop-filter: blur(10px); position: relative; transition: var(--transition); }
         .testi-card:hover { transform: translateY(-10px); border-color: var(--neon-blue); box-shadow: inset 0 0 30px rgba(0,240,255,0.1), var(--glow-blue); }
@@ -388,7 +406,7 @@
         .testi-user h4 { font-size: 18px; font-weight: 800; color: var(--text-light); }
         .testi-user span { font-size: 13px; color: var(--neon-pink); text-transform: uppercase; letter-spacing: 1px; font-weight: 700; }
 
-        /* ================= 12. CERTIFICATE VERIFICATION ================= */
+        /* ================= 13. CERTIFICATE VERIFICATION ================= */
         .verify-wrapper { max-width: 800px; margin: 0 auto; background: rgba(255,255,255,0.03); padding: 60px; border-radius: 30px; box-shadow: 0 20px 50px rgba(0,0,0,0.5); border: 2px solid var(--neon-blue); animation: boxGlow 3s infinite alternate; backdrop-filter: blur(20px); position: relative; overflow: hidden; }
         .verify-wrapper i.fa-shield-alt { font-size: 70px; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 30px; filter: drop-shadow(var(--glow-blue)); }
         .verify-form { display: flex; gap: 15px; margin-top: 40px; }
@@ -416,24 +434,31 @@
         .modal-footer { display: flex; justify-content: space-between; align-items: center; background: rgba(0,0,0,0.3); padding: 20px 40px; font-weight: 700; color: var(--text-light); font-size: 16px; border-top: 1px solid rgba(255,255,255,0.1); }
         .modal-footer span i { color: var(--neon-orange); margin-right: 8px; font-size: 20px; text-shadow: 0 0 10px var(--neon-orange); }
 
-        /* ================= 13. POWERFUL FOOTER ================= */
+        /* ================= 14. POWERFUL FOOTER ================= */
         footer { background: #02040a; color: var(--text-gray); padding: 100px 5% 0; font-size: 15px; position: relative; overflow: hidden; border-top: 2px solid var(--neon-blue); box-shadow: 0 -10px 30px rgba(0,240,255,0.1); }
-        .footer-brand .logo { color: #fff; margin-bottom: 25px; }
-        .footer-social a { background: rgba(255,255,255,0.05); border: 1px solid rgba(0,240,255,0.3); color: var(--text-light); box-shadow: 0 0 10px rgba(0,240,255,0.1); }
+        .footer-brand .logo { margin-bottom: 25px; justify-content: flex-start; }
+        .footer-social a { background: rgba(255,255,255,0.05); border: 1px solid rgba(0,240,255,0.3); color: var(--text-light); box-shadow: 0 0 10px rgba(0,240,255,0.1); width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: var(--transition);}
         .footer-social a:hover { background: var(--gradient-2); border-color: #fff; box-shadow: var(--glow-pink); transform: translateY(-5px) rotate(360deg); color: #fff;}
-        .footer-title { color: #fff; font-size: 22px; }
-        .footer-title::after { background: var(--gradient-3); box-shadow: var(--glow-mixed); }
+        .footer-title { color: #fff; font-size: 22px; position: relative; padding-bottom: 10px; margin-bottom: 25px;}
+        .footer-title::after { content: ''; position: absolute; left: 0; bottom: 0; width: 40px; height: 3px; background: var(--gradient-3); box-shadow: var(--glow-mixed); }
+        .footer-links li { margin-bottom: 15px; }
+        .footer-links a { color: var(--text-gray); display: flex; align-items: center; gap: 10px; transition: var(--transition); }
         .footer-links a:hover { color: var(--neon-blue); text-shadow: var(--glow-blue); padding-left: 10px; }
-        .footer-links a::before { color: var(--neon-pink); }
-        .footer-contact li i { background: var(--gradient-2); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-size: 22px; }
-        .footer-newsletter { background: rgba(255,255,255,0.02); border: 1px solid rgba(176,38,255,0.3); box-shadow: 0 0 15px rgba(176,38,255,0.1); backdrop-filter: blur(10px); }
-        .news-form input { background: rgba(0,0,0,0.5); color: #fff; border: 1px solid rgba(0,240,255,0.3); }
-        .news-form button { background: var(--gradient-1); color: #000; box-shadow: var(--glow-blue); }
+        .footer-links a::before { content: '\f105'; font-family: 'Font Awesome 6 Free'; font-weight: 900; color: var(--neon-pink); font-size: 12px;}
+        .footer-contact li { display: flex; align-items: flex-start; gap: 15px; margin-bottom: 20px; line-height: 1.6;}
+        .footer-contact li i { background: var(--gradient-2); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-size: 22px; margin-top: 3px;}
+        .footer-contact li span { color: #fff; }
+        .footer-newsletter { background: rgba(255,255,255,0.02); border: 1px solid rgba(176,38,255,0.3); box-shadow: 0 0 15px rgba(176,38,255,0.1); backdrop-filter: blur(10px); padding: 25px; border-radius: 10px;}
+        .news-form { display: flex; margin-top: 15px;}
+        .news-form input { flex: 1; padding: 12px 15px; background: rgba(0,0,0,0.5); color: #fff; border: 1px solid rgba(0,240,255,0.3); outline: none; border-radius: 5px 0 0 5px; }
+        .news-form button { padding: 12px 20px; border: none; background: var(--gradient-1); color: #000; box-shadow: var(--glow-blue); font-weight: 600; border-radius: 0 5px 5px 0; cursor: pointer; transition: var(--transition);}
         .news-form button:hover { transform: scale(1.05); }
-        .footer-bottom { border-color: rgba(255,255,255,0.05); margin-top: 50px; }
-        .footer-bottom p span { color: var(--neon-blue); text-shadow: var(--glow-blue); }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.05); padding: 25px 0; text-align: center; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; margin-top: 50px; }
+        .footer-bottom p span { color: var(--neon-blue); text-shadow: var(--glow-blue); font-weight: 700;}
+        .footer-bottom-links a { color: var(--text-gray); margin-left: 20px; font-size: 14px; transition: var(--transition); }
+        .footer-bottom-links a:hover { color: #fff; }
 
-        /* ================= MOBILE RESPONSIVE ================= */
+        /* ================= MOBILE RESPONSIVE (MOBILE MENU ADDED) ================= */
         @media (max-width: 1024px) {
             nav ul { gap: 10px; }
             nav ul li a { font-size: 11px; padding: 8px 12px; }
@@ -447,16 +472,32 @@
             .top-bar { flex-direction: column; gap: 10px; text-align: center; }
             .top-bar .contact-info span { display: block; margin: 5px 0 !important; }
             
-            nav ul:hover li a { transform: scale(1); opacity: 1; filter: none; }
-            nav ul li a:hover { transform: scale(1.1) !important; }
+            /* Show Mobile Hamburger Menu Icon */
+            .menu-toggle { display: block; }
+            
+            header { 
+                flex-direction: row; flex-wrap: wrap; padding: 15px 25px; 
+                border-radius: 40px; top: 10px; width: 92%; justify-content: space-between;
+            }
+            .logo img { height: 65px; width: 65px; }
 
-            header { flex-direction: column; padding: 20px; border-radius: 30px; top: 10px; width: 92%; }
-            nav { display: block !important; width: 100%; margin-top: 20px; overflow-x: auto; padding-bottom: 15px; }
-            nav::-webkit-scrollbar { height: 3px; }
-            nav::-webkit-scrollbar-thumb { background: var(--gradient-2); border-radius: 4px; }
-            nav ul { flex-wrap: nowrap; justify-content: flex-start; gap: 15px; padding-bottom: 5px; }
-            nav ul li { flex-shrink: 0; }
-            .logo-text { display: none; } /* Hide large text on small mobile if needed, or scale it */
+            /* Animated Mobile Dropdown Menu */
+            nav { 
+                display: none !important; /* Hidden by default */
+                width: 100%; position: absolute; top: 110%; left: 0; 
+                background: rgba(10, 15, 30, 0.95); backdrop-filter: blur(30px);
+                border: 2px solid var(--neon-blue); border-radius: 25px;
+                padding: 20px 0; box-shadow: 0 15px 40px rgba(0,0,0,0.9), var(--glow-blue);
+            }
+            nav.active { display: block !important; animation: fadeIn 0.4s ease forwards; }
+
+            @keyframes fadeIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+
+            nav ul { flex-direction: column; gap: 10px; padding: 0 20px; }
+            nav ul:hover li a { transform: scale(1); opacity: 1; filter: none; } /* Disable fancy desktop blur on mobile */
+            nav ul li a { text-align: center; font-size: 15px; padding: 12px; }
+            nav ul li a:hover { transform: scale(1.05) !important; }
+
             .hero-content h1 { font-size: 38px; }
             .hero-content p { font-size: 18px; }
             .btn-hero { padding: 15px 30px; font-size: 14px; margin: 10px 5px; width: 80%; }
@@ -466,7 +507,8 @@
             .section-header h2 { font-size: 32px; }
             #about { gap: 40px; text-align: center; }
             .about-content h2 { font-size: 32px; }
-            .course-container, .features-grid, .faculty-grid, .zone-grid, .testi-grid { grid-template-columns: 1fr; }
+            .course-container, .features-grid, .faculty-grid, .management-grid, .zone-grid, .testi-grid { grid-template-columns: 1fr; }
+            .management-card { width: 100%; }
             .steps-container { gap: 25px; }
             .step-box { width: 100%; }
             .verify-form { flex-direction: column; }
@@ -509,9 +551,14 @@
     <header>
         <a href="#home" class="logo">
             <img src="logo.png" alt="Udaan Computer Academy Logo">
-            <div class="logo-text">Udaan<br><span>Academy</span></div>
         </a>
-        <nav>
+        
+        <!-- Mobile 3-Line Menu Icon -->
+        <div class="menu-toggle" id="mobile-menu">
+            <i class="fas fa-bars"></i>
+        </div>
+
+        <nav id="nav-menu">
             <ul>
                 <li><a href="#home" class="active">Home</a></li>
                 <li><a href="#about">About</a></li>
@@ -749,31 +796,22 @@
             <div class="divider"></div>
             <p style="margin-top:15px;">Meet the visionary leaders driving Udaan Computer Academy towards excellence.</p>
         </div>
-        <div class="faculty-grid">
-            <div class="faculty-card">
-                <div class="faculty-img">
-                    <!-- Professional placeholder image -->
-                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=256&auto=format&fit=crop" alt="Rustam Ansari">
+        <div class="management-grid">
+            <div class="management-card">
+                <div class="management-img">
+                    <img src="rustam.png" alt="Rustam Ansari">
                 </div>
                 <h3>Rustam Ansari</h3>
                 <span>Founder & CEO</span>
                 <p>Leading the institution with a visionary mindset and absolute dedication to digital growth.</p>
             </div>
-            <div class="faculty-card">
-                <div class="faculty-img">
-                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=256&auto=format&fit=crop" alt="Ujma Parween">
+            <div class="management-card">
+                <div class="management-img">
+                    <img src="ujma.pnj" alt="Ujma Parween">
                 </div>
                 <h3>Ujma Parween</h3>
                 <span>Managing Director</span>
                 <p>Driving operational excellence, strategic planning, and overall student success.</p>
-            </div>
-            <div class="faculty-card">
-                <div class="faculty-img">
-                    <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=256&auto=format&fit=crop" alt="Sarfraj Ansari">
-                </div>
-                <h3>Sarfraj Ansari</h3>
-                <span>Operations Head</span>
-                <p>Ensuring smooth day-to-day operations and high-quality practical training delivery.</p>
             </div>
         </div>
     </section>
@@ -899,7 +937,6 @@
             <div class="footer-brand">
                 <div class="logo" style="margin-bottom:20px;">
                     <img src="logo.png" alt="Udaan Computer Academy Logo">
-                    <div class="logo-text">Udaan<br><span>Academy</span></div>
                 </div>
                 <p>Empowering the youth with premium IT skills. From deep coding to advanced accounting, we are committed to providing the highest quality education and securing your digital future.</p>
                 <div class="footer-social">
@@ -960,6 +997,33 @@
     <!-- ================= JAVASCRIPT ================= -->
     <script>
         document.getElementById('year').innerText = new Date().getFullYear();
+
+        // Mobile Menu Logic
+        const mobileMenuBtn = document.getElementById('mobile-menu');
+        const navMenu = document.getElementById('nav-menu');
+        const navLinksResponsive = document.querySelectorAll('#nav-menu ul li a');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            const icon = mobileMenuBtn.querySelector('i');
+            if(navMenu.classList.contains('active')){
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // Close menu when a link is clicked
+        navLinksResponsive.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                const icon = mobileMenuBtn.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            });
+        });
 
         // Navigation Active Link Switcher
         const sections = document.querySelectorAll('section');
