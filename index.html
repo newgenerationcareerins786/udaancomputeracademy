@@ -42,88 +42,159 @@
         .top-bar .social-icons i { margin-left: 15px; cursor: pointer; transition: var(--transition); }
         .top-bar .social-icons i:hover { color: var(--secondary); transform: translateY(-2px); }
 
-        /* ================= STICKY HEADER & NAV ================= */
+        /* ================= STICKY HEADER & MEGA NAV ================= */
         header {
             background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(10px);
             padding: 15px 5%; display: flex; justify-content: space-between; align-items: center;
             box-shadow: 0 4px 20px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000;
         }
-        .logo { font-size: 26px; font-weight: 800; color: var(--primary); display: flex; align-items: center; gap: 10px; }
+        .logo { font-size: 24px; font-weight: 800; color: var(--primary); display: flex; align-items: center; gap: 10px; }
         .logo span { color: var(--secondary); }
         .logo i { font-size: 32px; color: var(--secondary); }
 
-        nav ul { display: flex; align-items: center; gap: 20px; }
-        nav ul li a { color: var(--primary); font-weight: 600; font-size: 15px; text-transform: uppercase; letter-spacing: 0.5px; transition: var(--transition); position: relative; }
+        nav ul { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; justify-content: center; }
+        nav ul li a { color: var(--primary); font-weight: 600; font-size: 14px; text-transform: uppercase; letter-spacing: 0.5px; transition: var(--transition); position: relative; }
         nav ul li a::after { content: ''; position: absolute; width: 0; height: 2px; bottom: -5px; left: 0; background: var(--secondary); transition: var(--transition); }
         nav ul li a:hover::after, nav ul li a.active::after { width: 100%; }
         nav ul li a:hover, nav ul li a.active { color: var(--secondary); }
 
-        .btn-glow {
-            background: var(--secondary); color: var(--white) !important; padding: 10px 25px; border-radius: 30px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;
-            box-shadow: 0 0 15px rgba(230, 57, 70, 0.4); transition: var(--transition);
-        }
-        .btn-glow:hover { background: var(--secondary-light); box-shadow: 0 0 25px rgba(230, 57, 70, 0.7); transform: translateY(-2px); }
+        .btn-glow { background: var(--secondary); color: var(--white) !important; padding: 10px 20px; border-radius: 30px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; box-shadow: 0 0 15px rgba(230, 57, 70, 0.4); transition: var(--transition); }
+        .btn-glow:hover { background: var(--secondary-light); box-shadow: 0 0 25px rgba(230, 57, 70, 0.7); transform: translateY(-2px); color: white !important;}
+        .btn-glow::after { display: none; }
 
         /* ================= COMMON SECTION STYLES ================= */
-        section { padding: 100px 5%; position: relative; }
-        .section-header { text-align: center; margin-bottom: 60px; }
-        .section-header h2 { font-size: 40px; color: var(--primary); font-weight: 800; margin-bottom: 15px; text-transform: uppercase; }
+        section { padding: 90px 5%; position: relative; }
+        .section-header { text-align: center; margin-bottom: 50px; }
+        .section-header h2 { font-size: 38px; color: var(--primary); font-weight: 800; margin-bottom: 15px; text-transform: uppercase; }
         .section-header h2 span { color: var(--secondary); }
         .section-header p { color: #666; font-size: 16px; max-width: 700px; margin: 0 auto; }
         .divider { width: 80px; height: 4px; background: var(--secondary); margin: 0 auto; border-radius: 2px; }
 
-        /* ================= HERO SECTION ================= */
+        /* ================= 1. HERO SECTION ================= */
         #home {
             height: 90vh;
             background: linear-gradient(rgba(10,25,47,0.85), rgba(10,25,47,0.85)), url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2070&auto=format&fit=crop') center/cover fixed;
             display: flex; align-items: center; justify-content: center; text-align: center; color: var(--white);
         }
-        .hero-content h1 { font-size: 65px; font-weight: 800; line-height: 1.2; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 2px; }
+        .hero-content h1 { font-size: 60px; font-weight: 800; line-height: 1.2; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 2px; }
         .hero-content h1 span { color: var(--secondary); }
         .hero-content p { font-size: 20px; color: var(--text-gray); margin-bottom: 40px; max-width: 800px; margin-inline: auto; font-weight: 300; }
-        
-        .btn-hero { padding: 15px 40px; font-size: 16px; font-weight: 600; border-radius: 50px; text-transform: uppercase; letter-spacing: 1px; transition: var(--transition); border: 2px solid transparent; display: inline-block; cursor: pointer;}
-        .btn-hero.primary { background: var(--secondary); color: var(--white); margin-right: 15px; }
+        .btn-hero { padding: 15px 35px; font-size: 16px; font-weight: 600; border-radius: 50px; text-transform: uppercase; letter-spacing: 1px; transition: var(--transition); border: 2px solid transparent; display: inline-block; cursor: pointer; margin: 0 10px;}
+        .btn-hero.primary { background: var(--secondary); color: var(--white); }
         .btn-hero.primary:hover { background: transparent; border-color: var(--secondary); color: var(--secondary); }
+        .btn-hero.outline { background: transparent; border-color: var(--white); color: var(--white); }
+        .btn-hero.outline:hover { background: var(--white); color: var(--primary); }
 
-        /* ================= ABOUT & FEATURES ================= */
-        #why-us { background: var(--white); }
+        /* ================= 2. STATS COUNTER ================= */
+        .stats-wrapper { display: flex; justify-content: space-around; flex-wrap: wrap; gap: 20px; background: var(--white); padding: 40px 5%; margin-top: -50px; position: relative; z-index: 10; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); max-width: 1200px; margin-inline: auto; }
+        .stat-item { text-align: center; }
+        .stat-item i { font-size: 40px; color: var(--secondary); margin-bottom: 15px; }
+        .stat-item h3 { font-size: 35px; color: var(--primary); font-weight: 800; }
+        .stat-item p { font-size: 14px; color: #666; font-weight: 600; text-transform: uppercase; }
+
+        /* ================= 3. ABOUT US ================= */
+        #about { display: flex; align-items: center; gap: 60px; background: var(--white); flex-wrap: wrap; }
+        .about-image { flex: 1; min-width: 300px; position: relative; }
+        .about-image img { width: 100%; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.15); }
+        .about-content { flex: 1; min-width: 300px; }
+        .about-content h3 { font-size: 24px; color: var(--secondary); margin-bottom: 10px; text-transform: uppercase; }
+        .about-content h2 { font-size: 40px; color: var(--primary); font-weight: 800; margin-bottom: 25px; line-height: 1.2; }
+        .about-content p { color: #555; margin-bottom: 20px; font-size: 16px; }
+
+        /* ================= 4. WHY CHOOSE US ================= */
+        #why-us { background: var(--bg-light); }
         .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
-        .feature-box { background: var(--bg-light); padding: 40px 30px; border-radius: 15px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: var(--transition); border-bottom: 4px solid transparent; }
-        .feature-box:hover { transform: translateY(-10px); border-color: var(--secondary); background: var(--white); box-shadow: 0 15px 40px rgba(0,0,0,0.1); }
+        .feature-box { background: var(--white); padding: 40px 30px; border-radius: 15px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: var(--transition); border-bottom: 4px solid transparent; }
+        .feature-box:hover { transform: translateY(-10px); border-color: var(--secondary); }
         .feature-box i { font-size: 45px; color: var(--secondary); margin-bottom: 20px; }
         .feature-box h3 { font-size: 20px; color: var(--primary); margin-bottom: 15px; font-weight: 700; }
         .feature-box p { color: #666; font-size: 14px; }
 
-        /* ================= DYNAMIC COURSES (Premium Image Cards) ================= */
-        #courses { background: var(--bg-light); }
+        /* ================= 5. DYNAMIC COURSES (Premium Cards) ================= */
+        #courses { background: var(--white); }
         .course-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 35px; }
-        
-        .course-card { background: var(--white); border-radius: 15px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.08); transition: var(--transition); position: relative; cursor: pointer; border: 1px solid #eaeaea; }
+        .course-card { background: var(--bg-light); border-radius: 15px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.08); transition: var(--transition); position: relative; cursor: pointer; border: 1px solid #eaeaea; }
         .course-card:hover { transform: translateY(-12px); box-shadow: 0 25px 45px rgba(0,0,0,0.15); border-color: var(--secondary-light); }
-        
-        /* Badge */
         .course-badge { position: absolute; top: 15px; left: 15px; background: rgba(10, 25, 47, 0.85); backdrop-filter: blur(5px); color: var(--white); padding: 5px 15px; border-radius: 20px; font-size: 12px; font-weight: 700; text-transform: uppercase; z-index: 2; border: 1px solid rgba(255,255,255,0.2); }
-        
-        /* Image Section */
         .course-image { position: relative; height: 200px; overflow: hidden; }
         .course-image img { width: 100%; height: 100%; object-fit: cover; transition: all 0.6s ease; }
         .course-card:hover .course-image img { transform: scale(1.15); }
         .course-image::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(10,25,47,0.9) 0%, rgba(10,25,47,0) 100%); }
-        
-        /* Floating Icon */
         .course-icon-overlay { position: absolute; bottom: -25px; right: 25px; width: 60px; height: 60px; background: var(--secondary); border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 4px solid var(--white); z-index: 10; box-shadow: 0 8px 20px rgba(230,57,70,0.4); transition: var(--transition); }
         .course-icon-overlay i { color: var(--white); font-size: 24px; transition: var(--transition); }
         .course-card:hover .course-icon-overlay { transform: translateY(-5px); background: var(--primary); box-shadow: 0 10px 25px rgba(10,25,47,0.4); }
         .course-card:hover .course-icon-overlay i { transform: rotateY(360deg); color: var(--secondary); }
-
-        /* Course Details */
-        .course-info { padding: 40px 30px 30px; position: relative; }
-        .course-info h3 { font-size: 22px; color: var(--primary); margin-bottom: 15px; font-weight: 800; line-height: 1.3; }
-        .course-meta { display: flex; justify-content: space-between; margin-bottom: 20px; font-size: 14px; font-weight: 600; color: #555; background: var(--bg-light); padding: 10px 15px; border-radius: 8px; }
+        .course-info { padding: 40px 30px 30px; position: relative; background: var(--white);}
+        .course-info h3 { font-size: 20px; color: var(--primary); margin-bottom: 15px; font-weight: 800; line-height: 1.3; }
+        .course-meta { display: flex; justify-content: space-between; margin-bottom: 20px; font-size: 13px; font-weight: 600; color: #555; background: var(--bg-light); padding: 10px 15px; border-radius: 8px; }
         .course-meta span i { color: var(--secondary); margin-right: 5px; }
         .btn-view-details { background: transparent; color: var(--primary); padding: 12px 20px; border-radius: 8px; width: 100%; border: 2px solid var(--primary); font-weight: 700; cursor: pointer; transition: var(--transition); text-transform: uppercase; letter-spacing: 1px; font-size: 13px; }
         .course-card:hover .btn-view-details { background: var(--secondary); border-color: var(--secondary); color: var(--white); }
+
+        /* ================= 6. ADMISSIONS ================= */
+        #admission { background: var(--primary); color: var(--white); text-align: center; }
+        #admission .section-header h2 { color: var(--white); }
+        .steps-container { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin-top: 50px; }
+        .step-box { background: rgba(255,255,255,0.05); padding: 40px; border-radius: 15px; width: 250px; border: 1px solid rgba(255,255,255,0.1); transition: var(--transition); }
+        .step-box:hover { background: var(--secondary); transform: translateY(-10px); border-color: var(--secondary); }
+        .step-box i { font-size: 50px; margin-bottom: 20px; color: var(--white); }
+        .step-box h3 { font-size: 20px; margin-bottom: 10px; }
+        .step-box p { font-size: 14px; color: var(--text-gray); }
+        .step-box:hover p { color: var(--white); }
+
+        /* ================= 7. FACULTY ================= */
+        #faculty { background: var(--bg-light); }
+        .faculty-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+        .faculty-card { text-align: center; background: var(--white); border-radius: 15px; padding: 30px; transition: var(--transition); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+        .faculty-card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
+        .faculty-img { width: 120px; height: 120px; border-radius: 50%; margin: 0 auto 20px; background: var(--primary); display: flex; align-items: center; justify-content: center; color: var(--white); font-size: 50px; border: 5px solid #fff; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .faculty-card h3 { color: var(--primary); font-size: 20px; margin-bottom: 5px; }
+        .faculty-card span { color: var(--secondary); font-weight: 600; font-size: 14px; display: block; margin-bottom: 15px; }
+
+        /* ================= 8. PLACEMENT & RECRUITERS ================= */
+        #placement { background: var(--white); }
+        .recruiters { display: flex; justify-content: space-around; flex-wrap: wrap; gap: 30px; margin-top: 40px; opacity: 0.6; filter: grayscale(100%); transition: var(--transition); }
+        .recruiters:hover { opacity: 1; filter: grayscale(0%); }
+        .recruiter-logo { font-size: 30px; font-weight: 800; color: var(--primary); display: flex; align-items: center; gap: 10px; }
+
+        /* ================= 9. STUDENT ZONE ================= */
+        #student-zone { background: var(--bg-light); }
+        .zone-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .zone-card { background: var(--gradient); padding: 40px; border-radius: 15px; color: var(--white); text-align: center; }
+        .zone-card i { font-size: 50px; margin-bottom: 20px; }
+        .zone-card h3 { font-size: 24px; margin-bottom: 15px; }
+        .zone-card button { background: var(--white); color: var(--primary); border: none; padding: 10px 30px; border-radius: 30px; font-weight: 700; margin-top: 20px; cursor: pointer; transition: var(--transition); }
+        .zone-card button:hover { background: var(--primary); color: var(--white); }
+
+        /* ================= 10. GALLERY ================= */
+        #gallery { background: var(--white); }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; }
+        .gallery-item { position: relative; height: 250px; border-radius: 10px; overflow: hidden; background: var(--primary-light); display: flex; align-items: center; justify-content: center; color: var(--white); font-size: 40px; }
+        .gallery-overlay { position: absolute; inset: 0; background: rgba(230,57,70,0.8); display: flex; align-items: center; justify-content: center; opacity: 0; transition: var(--transition); cursor: pointer; }
+        .gallery-item:hover .gallery-overlay { opacity: 1; }
+        .gallery-overlay i { font-size: 30px; color: var(--white); }
+
+        /* ================= 11. TESTIMONIALS ================= */
+        #testimonials { background: var(--primary); color: var(--white); }
+        #testimonials .section-header h2, #testimonials .section-header p { color: var(--white); }
+        .testi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .testi-card { background: rgba(255,255,255,0.05); padding: 30px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.1); }
+        .testi-card i.fa-quote-left { font-size: 30px; color: var(--secondary); margin-bottom: 15px; display: block; }
+        .testi-card p { font-size: 15px; font-style: italic; margin-bottom: 20px; }
+        .testi-user { display: flex; align-items: center; gap: 15px; }
+        .testi-user img { width: 50px; height: 50px; border-radius: 50%; border: 2px solid var(--white); }
+        .testi-user h4 { font-size: 16px; font-weight: 700; }
+        .testi-user span { font-size: 12px; color: #ccc; }
+
+        /* ================= 12. CERTIFICATE VERIFICATION ================= */
+        #verify { background: var(--bg-light); text-align: center; }
+        .verify-wrapper { max-width: 700px; margin: 0 auto; background: var(--white); padding: 50px; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.05); border-top: 5px solid var(--secondary); }
+        .verify-wrapper i.fa-shield-alt { font-size: 60px; color: var(--secondary); margin-bottom: 20px; }
+        .verify-form { display: flex; gap: 10px; margin-top: 30px; }
+        .verify-form input { flex: 1; padding: 15px 25px; border: 2px solid #ddd; border-radius: 8px; font-size: 16px; outline: none; transition: var(--transition); }
+        .verify-form input:focus { border-color: var(--primary); }
+        .verify-btn { background: var(--primary); color: var(--white); border: none; padding: 0 30px; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; transition: var(--transition); }
+        .verify-btn:hover { background: var(--secondary); }
 
         /* ================= COURSE MODAL (DIALOG BOX) ================= */
         .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(5, 13, 26, 0.9); backdrop-filter: blur(8px); z-index: 9999; display: flex; align-items: center; justify-content: center; opacity: 0; visibility: hidden; transition: var(--transition); }
@@ -135,51 +206,50 @@
         
         .modal-header { background: var(--primary); color: var(--white); padding: 30px 40px; text-align: center; border-bottom: 4px solid var(--secondary); }
         .modal-header h2 { font-size: 28px; font-weight: 800; }
-        
         .modal-body { padding: 40px; max-height: 50vh; overflow-y: auto; }
         .modal-body ul { padding-left: 10px; }
         .modal-body ul li { margin-bottom: 12px; color: #444; font-size: 16px; position: relative; list-style: none; padding-left: 30px; font-weight: 500; }
         .modal-body ul li::before { content: '\f058'; font-family: 'Font Awesome 6 Free'; font-weight: 900; color: var(--secondary); position: absolute; left: 0; top: 2px; font-size: 18px; }
-        
         .modal-footer { display: flex; justify-content: space-between; align-items: center; background: var(--bg-light); padding: 20px 40px; font-weight: 700; color: var(--primary); font-size: 18px; border-top: 1px solid #ddd; }
         .modal-footer span i { color: var(--secondary); margin-right: 8px; font-size: 20px; }
 
-        /* ================= POWERFUL FOOTER ================= */
+        /* ================= 13. POWERFUL FOOTER & CONTACT ================= */
         footer { background: #020610; color: #8a94a6; padding: 80px 5% 0; font-size: 15px; position: relative; overflow: hidden; }
         footer::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 5px; background: var(--gradient); }
-        
         .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 40px; margin-bottom: 50px; }
-        
         .footer-brand .logo { color: var(--white); margin-bottom: 20px; }
         .footer-brand p { margin-bottom: 25px; line-height: 1.8; }
         .footer-social { display: flex; gap: 15px; }
         .footer-social a { width: 40px; height: 40px; background: rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: center; border-radius: 50%; color: var(--white); transition: var(--transition); }
         .footer-social a:hover { background: var(--secondary); transform: translateY(-5px); }
-
         .footer-title { color: var(--white); font-size: 20px; font-weight: 700; margin-bottom: 25px; position: relative; padding-bottom: 10px; }
         .footer-title::after { content: ''; position: absolute; left: 0; bottom: 0; width: 40px; height: 3px; background: var(--secondary); }
-
         .footer-links li { margin-bottom: 15px; }
         .footer-links a { color: #8a94a6; transition: var(--transition); display: flex; align-items: center; gap: 10px; }
         .footer-links a::before { content: '\f105'; font-family: 'Font Awesome 6 Free'; font-weight: 900; color: var(--secondary); font-size: 12px; }
         .footer-links a:hover { color: var(--secondary); padding-left: 8px; }
-
         .footer-contact li { display: flex; align-items: flex-start; gap: 15px; margin-bottom: 20px; line-height: 1.6; }
         .footer-contact li i { color: var(--secondary); font-size: 20px; margin-top: 3px; }
         .footer-contact li span { color: var(--white); }
-
+        .footer-newsletter { background: rgba(255,255,255,0.03); padding: 25px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.05); }
+        .footer-newsletter p { margin-bottom: 15px; font-size: 14px; }
+        .news-form { display: flex; }
+        .news-form input { flex: 1; padding: 12px 15px; border: none; outline: none; background: rgba(255,255,255,0.1); color: var(--white); border-radius: 5px 0 0 5px; }
+        .news-form button { padding: 12px 20px; background: var(--secondary); border: none; color: var(--white); cursor: pointer; border-radius: 0 5px 5px 0; font-weight: 600; transition: var(--transition); }
+        .news-form button:hover { background: var(--secondary-light); }
         .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding: 25px 0; text-align: center; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; }
         .footer-bottom p span { color: var(--secondary); font-weight: 700; }
         .footer-bottom-links a { color: #8a94a6; margin-left: 20px; font-size: 14px; transition: var(--transition); }
         .footer-bottom-links a:hover { color: var(--white); }
 
+        @media (max-width: 1024px) { nav ul { gap: 10px; } nav ul li a {font-size: 12px;} }
         @media (max-width: 991px) { .footer-top { grid-template-columns: 1fr 1fr; } }
-        @media (max-width: 768px) { .footer-top { grid-template-columns: 1fr; } .footer-bottom { justify-content: center; } }
+        @media (max-width: 768px) { nav {display:none;} /* Note: Mobile menu toggle needed in real prod */ .footer-top { grid-template-columns: 1fr; } .footer-bottom { justify-content: center; } }
     </style>
 </head>
 <body>
 
-    <!-- ================= TOP BAR ================= -->
+    <!-- TOP BAR -->
     <div class="top-bar">
         <div class="contact-info">
             <span><i class="fas fa-envelope"></i> info@udaancomputeracademy.com</span>
@@ -193,31 +263,76 @@
         </div>
     </div>
 
-    <!-- ================= HEADER & NAV ================= -->
+    <!-- HEADER & MEGA NAV -->
     <header>
         <a href="#home" class="logo"><i class="fas fa-laptop-code"></i> उड़ान <span>कंप्यूटर एकेडमी</span></a>
         <nav>
             <ul>
                 <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
                 <li><a href="#why-us">Features</a></li>
-                <li><a href="#courses">Our Courses</a></li>
+                <li><a href="#courses">Courses</a></li>
+                <li><a href="#admission">Admission</a></li>
+                <li><a href="#faculty">Faculty</a></li>
+                <li><a href="#placement">Placement</a></li>
+                <li><a href="#student-zone">Student Zone</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#testimonials">Reviews</a></li>
+                <li><a href="#verify">Verify</a></li>
                 <li><a href="#footer" class="btn-glow">Contact Us</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- ================= HERO SECTION ================= -->
+    <!-- SECTION 1: HERO -->
     <section id="home">
         <div class="hero-content">
             <h1>Launch Your Career With <br><span>Udaan Computer Academy</span></h1>
             <p>100% Practical IT Training. Explore our completely structured modular courses designed to secure your digital future.</p>
             <div style="margin-top: 30px;">
                 <a href="#courses" class="btn-hero primary">View All Courses</a>
+                <a href="#verify" class="btn-hero outline">Verify Certificate</a>
             </div>
         </div>
     </section>
 
-    <!-- ================= DYNAMIC COURSES (Premium Image Cards) ================= -->
+    <!-- SECTION 2: STATS -->
+    <div class="stats-wrapper">
+        <div class="stat-item"><i class="fas fa-chalkboard-teacher"></i><h3 class="counter" data-target="15">0</h3><p>Expert Faculty</p></div>
+        <div class="stat-item"><i class="fas fa-user-graduate"></i><h3 class="counter" data-target="3500">0</h3><p>Students Placed</p></div>
+        <div class="stat-item"><i class="fas fa-certificate"></i><h3 class="counter" data-target="100">0</h3><p>ISO Certified</p></div>
+        <div class="stat-item"><i class="fas fa-laptop-code"></i><h3 class="counter" data-target="10">0</h3><p>Premium Courses</p></div>
+    </div>
+
+    <!-- SECTION 3: ABOUT US -->
+    <section id="about">
+        <div class="about-image">
+            <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=2070&auto=format&fit=crop" alt="Campus">
+        </div>
+        <div class="about-content">
+            <h3>About Us</h3>
+            <h2>Empowering Minds, <br>Transforming Lives.</h2>
+            <p>उड़ान कंप्यूटर एकेडमी एक मान्यता प्राप्त और प्रीमियम एजुकेशन सेंटर है। हम छात्रों को बेसिक कंप्यूटर से लेकर एडवांस कोडिंग, डिजाइनिंग और एकाउंटिंग की 100% प्रैक्टिकल ट्रेनिंग देते हैं।</p>
+            <p>हमारा उद्देश्य सिर्फ सर्टिफिकेट देना नहीं, बल्कि आपको जॉब-रेडी बनाना है। हमारी मॉडर्न लैब और अनुभवी टीचर्स आपको हर कदम पर गाइड करते हैं।</p>
+        </div>
+    </section>
+
+    <!-- SECTION 4: WHY CHOOSE US (Features) -->
+    <section id="why-us">
+        <div class="section-header">
+            <h2>Why Choose <span>Us?</span></h2>
+            <div class="divider"></div>
+            <p style="margin-top:15px;">We provide a learning environment that sets you up for absolute success.</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-box"><i class="fas fa-project-diagram"></i><h3>Live Projects</h3><p>Learn by working on real-world industry projects.</p></div>
+            <div class="feature-box"><i class="fas fa-briefcase"></i><h3>100% Job Assistance</h3><p>Dedicated placement cell to help you get hired.</p></div>
+            <div class="feature-box"><i class="fas fa-globe"></i><h3>Global Certification</h3><p>ISO Certified diplomas valid in Govt & Private sectors.</p></div>
+            <div class="feature-box"><i class="fas fa-wifi"></i><h3>Smart Classes</h3><p>Air-conditioned labs with high-speed Wi-Fi access.</p></div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: COURSES (Premium Image Cards) -->
     <section id="courses">
         <div class="section-header">
             <h2>Our Complete <span>Courses</span></h2>
@@ -236,10 +351,7 @@
                 </div>
                 <div class="course-info">
                     <h3>True Basic of Computer</h3>
-                    <div class="course-meta">
-                        <span><i class="fas fa-clock"></i> 3 Months</span>
-                        <span><i class="fas fa-rupee-sign"></i> 6,000</span>
-                    </div>
+                    <div class="course-meta"><span><i class="fas fa-clock"></i> 3 Months</span><span><i class="fas fa-rupee-sign"></i> 6,000</span></div>
                     <button class="btn-view-details">View Syllabus</button>
                 </div>
             </div>
@@ -253,10 +365,7 @@
                 </div>
                 <div class="course-info">
                     <h3>True Web Developer</h3>
-                    <div class="course-meta">
-                        <span><i class="fas fa-clock"></i> 6 Months</span>
-                        <span><i class="fas fa-rupee-sign"></i> 17,000</span>
-                    </div>
+                    <div class="course-meta"><span><i class="fas fa-clock"></i> 6 Months</span><span><i class="fas fa-rupee-sign"></i> 17,000</span></div>
                     <button class="btn-view-details">View Syllabus</button>
                 </div>
             </div>
@@ -270,10 +379,7 @@
                 </div>
                 <div class="course-info">
                     <h3>True Graphic Designing</h3>
-                    <div class="course-meta">
-                        <span><i class="fas fa-clock"></i> 6 Months</span>
-                        <span><i class="fas fa-rupee-sign"></i> 15,000</span>
-                    </div>
+                    <div class="course-meta"><span><i class="fas fa-clock"></i> 6 Months</span><span><i class="fas fa-rupee-sign"></i> 15,000</span></div>
                     <button class="btn-view-details">View Syllabus</button>
                 </div>
             </div>
@@ -287,10 +393,7 @@
                 </div>
                 <div class="course-info">
                     <h3>Tally ERP 9 & Prime</h3>
-                    <div class="course-meta">
-                        <span><i class="fas fa-clock"></i> 6 Months</span>
-                        <span><i class="fas fa-rupee-sign"></i> 14,500</span>
-                    </div>
+                    <div class="course-meta"><span><i class="fas fa-clock"></i> 6 Months</span><span><i class="fas fa-rupee-sign"></i> 14,500</span></div>
                     <button class="btn-view-details">View Syllabus</button>
                 </div>
             </div>
@@ -304,10 +407,7 @@
                 </div>
                 <div class="course-info">
                     <h3>ADCA Master Course</h3>
-                    <div class="course-meta">
-                        <span><i class="fas fa-clock"></i> 12 Months</span>
-                        <span><i class="fas fa-rupee-sign"></i> 20,000</span>
-                    </div>
+                    <div class="course-meta"><span><i class="fas fa-clock"></i> 12 Months</span><span><i class="fas fa-rupee-sign"></i> 20,000</span></div>
                     <button class="btn-view-details">View Syllabus</button>
                 </div>
             </div>
@@ -321,10 +421,7 @@
                 </div>
                 <div class="course-info">
                     <h3>DCA Course</h3>
-                    <div class="course-meta">
-                        <span><i class="fas fa-clock"></i> 6 Months</span>
-                        <span><i class="fas fa-rupee-sign"></i> 12,000</span>
-                    </div>
+                    <div class="course-meta"><span><i class="fas fa-clock"></i> 6 Months</span><span><i class="fas fa-rupee-sign"></i> 12,000</span></div>
                     <button class="btn-view-details">View Syllabus</button>
                 </div>
             </div>
@@ -338,10 +435,7 @@
                 </div>
                 <div class="course-info">
                     <h3>DOAP Certification</h3>
-                    <div class="course-meta">
-                        <span><i class="fas fa-clock"></i> 12 Months</span>
-                        <span><i class="fas fa-rupee-sign"></i> 15,000</span>
-                    </div>
+                    <div class="course-meta"><span><i class="fas fa-clock"></i> 12 Months</span><span><i class="fas fa-rupee-sign"></i> 15,000</span></div>
                     <button class="btn-view-details">View Syllabus</button>
                 </div>
             </div>
@@ -355,10 +449,7 @@
                 </div>
                 <div class="course-info">
                     <h3>O Level (NIELIT)</h3>
-                    <div class="course-meta">
-                        <span><i class="fas fa-clock"></i> 12 Months</span>
-                        <span>Govt. Fee</span>
-                    </div>
+                    <div class="course-meta"><span><i class="fas fa-clock"></i> 12 Months</span><span>Govt. Fee</span></div>
                     <button class="btn-view-details">View Syllabus</button>
                 </div>
             </div>
@@ -372,10 +463,7 @@
                 </div>
                 <div class="course-info">
                     <h3>CCC (NIELIT)</h3>
-                    <div class="course-meta">
-                        <span><i class="fas fa-clock"></i> 3 Months</span>
-                        <span>Govt. Fee</span>
-                    </div>
+                    <div class="course-meta"><span><i class="fas fa-clock"></i> 3 Months</span><span>Govt. Fee</span></div>
                     <button class="btn-view-details">View Syllabus</button>
                 </div>
             </div>
@@ -389,10 +477,7 @@
                 </div>
                 <div class="course-info">
                     <h3>PGDCA</h3>
-                    <div class="course-meta">
-                        <span><i class="fas fa-clock"></i> 12 Months</span>
-                        <span><i class="fas fa-rupee-sign"></i> 25,000</span>
-                    </div>
+                    <div class="course-meta"><span><i class="fas fa-clock"></i> 12 Months</span><span><i class="fas fa-rupee-sign"></i> 25,000</span></div>
                     <button class="btn-view-details">View Syllabus</button>
                 </div>
             </div>
@@ -400,7 +485,120 @@
         </div>
     </section>
 
-    <!-- ================= COURSE MODAL (DIALOG BOX) ================= -->
+    <!-- SECTION 6: ADMISSION PROCESS -->
+    <section id="admission">
+        <div class="section-header">
+            <h2>Admission <span>Process</span></h2>
+            <div class="divider" style="background:var(--white);"></div>
+            <p style="margin-top:15px; color:var(--text-gray);">Join Udaan Computer Academy in 4 simple steps and start your journey.</p>
+        </div>
+        <div class="steps-container">
+            <div class="step-box"><i class="fas fa-user-edit"></i><h3>1. Register</h3><p>Fill out the online or offline registration form.</p></div>
+            <div class="step-box"><i class="fas fa-comments"></i><h3>2. Counseling</h3><p>Meet our career counselors to choose the best course.</p></div>
+            <div class="step-box"><i class="fas fa-file-alt"></i><h3>3. Document Submit</h3><p>Submit Aadhaar, Photos, and Previous Marksheets.</p></div>
+            <div class="step-box"><i class="fas fa-laptop"></i><h3>4. Start Learning</h3><p>Get your ID card, syllabus and start practical classes.</p></div>
+        </div>
+    </section>
+
+    <!-- SECTION 7: FACULTY -->
+    <section id="faculty">
+        <div class="section-header">
+            <h2>Meet Our <span>Experts</span></h2>
+            <div class="divider"></div>
+        </div>
+        <div class="faculty-grid">
+            <div class="faculty-card"><div class="faculty-img"><i class="fas fa-user-tie"></i></div><h3>Mr. Sharma</h3><span>HOD - Programming</span><p>10+ years experience in Full Stack Web Development.</p></div>
+            <div class="faculty-card"><div class="faculty-img"><i class="fas fa-user-tie"></i></div><h3>Ms. Verma</h3><span>Sr. Graphic Designer</span><p>Expert in UI/UX, Adobe Creative Suite & Corel.</p></div>
+            <div class="faculty-card"><div class="faculty-img"><i class="fas fa-user-tie"></i></div><h3>Mr. Gupta</h3><span>Accounting Head</span><p>CA Inter, Master of Tally Prime and GST Taxation.</p></div>
+            <div class="faculty-card"><div class="faculty-img"><i class="fas fa-user-tie"></i></div><h3>Mr. Singh</h3><span>Hardware & Networking</span><p>Specialist in CCNA, Hardware repair and DOAP.</p></div>
+        </div>
+    </section>
+
+    <!-- SECTION 8: PLACEMENT -->
+    <section id="placement">
+        <div class="section-header">
+            <h2>Top <span>Recruiters</span></h2>
+            <div class="divider"></div>
+            <p style="margin-top:15px;">Our students are placed in top IT companies and local enterprises.</p>
+        </div>
+        <div class="recruiters">
+            <div class="recruiter-logo"><i class="fab fa-microsoft"></i> TechCorp</div>
+            <div class="recruiter-logo"><i class="fab fa-amazon"></i> WebMinds</div>
+            <div class="recruiter-logo"><i class="fab fa-google"></i> IT Solutions</div>
+            <div class="recruiter-logo"><i class="fas fa-building"></i> Local Finance C.</div>
+        </div>
+    </section>
+
+    <!-- SECTION 9: STUDENT ZONE -->
+    <section id="student-zone">
+        <div class="section-header">
+            <h2>Student <span>Zone</span></h2>
+            <div class="divider"></div>
+        </div>
+        <div class="zone-grid">
+            <div class="zone-card"><i class="fas fa-book"></i><h3>Study Material</h3><p>Download PDF notes and syllabus.</p><button>Download Here</button></div>
+            <div class="zone-card"><i class="fas fa-laptop-house"></i><h3>Online Mock Test</h3><p>Practice for CCC and O-Level exams.</p><button>Start Test</button></div>
+            <div class="zone-card"><i class="fas fa-poll"></i><h3>Check Result</h3><p>View your terminal and final exam results.</p><button>View Result</button></div>
+        </div>
+    </section>
+
+    <!-- SECTION 10: GALLERY -->
+    <section id="gallery">
+        <div class="section-header">
+            <h2>Campus <span>Gallery</span></h2>
+            <div class="divider"></div>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-item"><i class="fas fa-desktop"></i><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div>
+            <div class="gallery-item"><i class="fas fa-users"></i><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div>
+            <div class="gallery-item"><i class="fas fa-award"></i><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div>
+            <div class="gallery-item"><i class="fas fa-laptop-code"></i><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div>
+        </div>
+    </section>
+
+    <!-- SECTION 11: TESTIMONIALS -->
+    <section id="testimonials">
+        <div class="section-header">
+            <h2>Student <span>Success</span></h2>
+            <div class="divider"></div>
+            <p style="margin-top:15px;">Hear what our proud alumni have to say about their journey.</p>
+        </div>
+        <div class="testi-grid">
+            <div class="testi-card">
+                <i class="fas fa-quote-left"></i>
+                <p>"Udaan Computer Academy completely transformed my career. The Web Development training was 100% practical. I got a job even before my course ended!"</p>
+                <div class="testi-user"><img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User"><div><h4>Rahul Singh</h4><span>Frontend Developer</span></div></div>
+            </div>
+            <div class="testi-card">
+                <i class="fas fa-quote-left"></i>
+                <p>"Tally Prime classes are the best in the city. The teachers explain GST and taxation with live company data which is very helpful."</p>
+                <div class="testi-user"><img src="https://randomuser.me/api/portraits/women/44.jpg" alt="User"><div><h4>Pooja Sharma</h4><span>Accountant</span></div></div>
+            </div>
+            <div class="testi-card">
+                <i class="fas fa-quote-left"></i>
+                <p>"I completed my O-Level here and passed in the first attempt. The mock tests and study material provided by the academy are outstanding."</p>
+                <div class="testi-user"><img src="https://randomuser.me/api/portraits/men/67.jpg" alt="User"><div><h4>Amit Verma</h4><span>Govt. Aspirant</span></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 12: CERTIFICATE VERIFICATION -->
+    <section id="verify">
+        <div class="section-header">
+            <h2>Verify <span>Certificate</span></h2>
+            <div class="divider"></div>
+            <p style="margin-top:15px;">Check authenticity of student certificates instantly from our secure database.</p>
+        </div>
+        <div class="verify-wrapper">
+            <i class="fas fa-shield-alt"></i>
+            <form class="verify-form" onsubmit="event.preventDefault(); alert('Connecting to Server... Certificate Verified!');">
+                <input type="text" placeholder="Enter Reg No. / Roll No." required>
+                <button type="submit" class="verify-btn"><i class="fas fa-check-circle"></i> Validate</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- COURSE MODAL (DIALOG BOX) -->
     <div id="courseModal" class="modal-overlay">
         <div class="modal-content">
             <span class="close-modal" onclick="closeModal()">&times;</span>
@@ -416,7 +614,7 @@
         </div>
     </div>
 
-    <!-- ================= POWERFUL FOOTER ================= -->
+    <!-- SECTION 13: POWERFUL FOOTER & CONTACT -->
     <footer id="footer">
         <div class="footer-top">
             
@@ -434,8 +632,9 @@
                 <h3 class="footer-title">Quick Links</h3>
                 <ul class="footer-links">
                     <li><a href="#home">Home Page</a></li>
+                    <li><a href="#about">About Academy</a></li>
                     <li><a href="#courses">All Courses</a></li>
-                    <li><a href="#">Certificate Verification</a></li>
+                    <li><a href="#verify">Certificate Verification</a></li>
                     <li><a href="#">Student Login</a></li>
                 </ul>
             </div>
@@ -457,6 +656,13 @@
                     <li><i class="fas fa-phone-alt"></i> <span>+91 701768365</span></li>
                     <li><i class="fas fa-envelope"></i> <span>info@udaancomputeracademy.com</span></li>
                 </ul>
+                <div class="footer-newsletter">
+                    <p>Subscribe to our newsletter for latest updates.</p>
+                    <form class="news-form" onsubmit="event.preventDefault(); alert('Subscribed Successfully!');">
+                        <input type="email" placeholder="Email Address" required>
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
             </div>
 
         </div>
@@ -474,7 +680,56 @@
     <script>
         document.getElementById('year').innerText = new Date().getFullYear();
 
-        // Course Data
+        // 1. Navigation Active Link Switcher on Scroll
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('nav ul li a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes(current)) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // 2. Stats Counter Animation
+        const counters = document.querySelectorAll('.counter');
+        let counterStarted = false;
+        
+        window.addEventListener('scroll', () => {
+            const statsSection = document.querySelector('.stats-wrapper');
+            if(statsSection) {
+                const sectionPos = statsSection.getBoundingClientRect().top;
+                const screenPos = window.innerHeight;
+                if(sectionPos < screenPos && !counterStarted) {
+                    counters.forEach(counter => {
+                        const target = +counter.getAttribute('data-target');
+                        const speed = target / 100; 
+                        const updateCount = () => {
+                            const count = +counter.innerText;
+                            if (count < target) {
+                                counter.innerText = Math.ceil(count + speed);
+                                setTimeout(updateCount, 20);
+                            } else {
+                                counter.innerText = target + "+";
+                            }
+                        };
+                        updateCount();
+                    });
+                    counterStarted = true;
+                }
+            }
+        });
+
+        // 3. Course Data for Modal
         const courseData = {
             'basic': {
                 title: 'True Basic of Computer',
@@ -627,7 +882,7 @@
             }
         };
 
-        // Modal Logic
+        // 4. Modal Logic
         const modal = document.getElementById('courseModal');
         const modalTitle = document.getElementById('modalTitle');
         const modalBody = document.getElementById('modalBody');
