@@ -171,23 +171,21 @@
             animation: boxGlow 4s infinite alternate;
         }
         
-        /* UPDATED LOGO (BIGGER CIRCLE, NO TEXT) */
+        /* LOGO (BIGGER CIRCLE, NO TEXT) */
         .logo { 
             display: flex; align-items: center; justify-content: center;
             transition: transform 0.4s ease; 
         }
         .logo img { 
-            height: 85px; /* Bigger Logo */
-            width: 85px;  /* Bigger Logo */
-            object-fit: cover; 
-            border-radius: 50%; /* Perfect Circle */
-            border: 3px solid var(--neon-blue); /* Clear shining outline */
+            height: 85px; width: 85px;  object-fit: cover; 
+            border-radius: 50%; border: 3px solid var(--neon-blue); 
             box-shadow: 0 0 20px var(--neon-blue), inset 0 0 15px var(--neon-blue);
             background: #fff; padding: 4px;
             animation: logoShine 3s infinite alternate; 
         }
         .logo:hover { transform: scale(1.1) rotate(-5deg); }
         .logo:hover img { animation: none; filter: drop-shadow(0 0 35px var(--neon-blue)) drop-shadow(0 0 25px var(--neon-pink)); }
+        .logo-text { display: none; } /* Kept hidden as per your request */
 
         /* Menu Zoom In & Zoom Out Magic */
         nav { display: block; }
@@ -224,14 +222,10 @@
         }
         nav ul li a.btn-glow:hover { transform: translateY(-3px) scale(1.25) !important; box-shadow: 0 0 35px var(--neon-orange), inset 0 0 20px #fff; border-color: #fff; }
 
-        /* Mobile Hamburger Icon (Hidden on Desktop) */
+        /* Mobile Hamburger Icon */
         .menu-toggle {
-            display: none;
-            color: #fff;
-            font-size: 32px;
-            cursor: pointer;
-            text-shadow: var(--glow-blue);
-            transition: var(--transition);
+            display: none; color: #fff; font-size: 32px; cursor: pointer;
+            text-shadow: var(--glow-blue); transition: var(--transition);
         }
         .menu-toggle:hover { color: var(--neon-pink); text-shadow: var(--glow-pink); transform: scale(1.1); }
 
@@ -336,7 +330,6 @@
 
         /* ================= 7. MANAGEMENT TEAM ================= */
         #management { background: rgba(0,0,0,0.2); }
-        /* Used same grid styling as faculty but adapted for two items */
         .management-grid { display: flex; justify-content: center; gap: 60px; flex-wrap: wrap; margin-top: 40px; }
         .management-card { 
             text-align: center; background: rgba(255,255,255,0.03); border-radius: 25px; padding: 40px 30px; width: 350px;
@@ -435,44 +428,71 @@
         .modal-footer span i { color: var(--neon-orange); margin-right: 8px; font-size: 20px; text-shadow: 0 0 10px var(--neon-orange); }
 
         /* ================= 14. POWERFUL FOOTER ================= */
-        footer { background: #02040a; color: var(--text-gray); padding: 100px 5% 0; font-size: 15px; position: relative; overflow: hidden; border-top: 2px solid var(--neon-blue); box-shadow: 0 -10px 30px rgba(0,240,255,0.1); }
-        .footer-brand .logo { margin-bottom: 25px; justify-content: flex-start; }
+        footer { 
+            background: #02040a; color: var(--text-gray); padding: 100px 5% 0; font-size: 15px; position: relative; overflow: hidden; 
+            border-top: 2px solid var(--neon-blue); box-shadow: 0 -10px 30px rgba(0,240,255,0.1); 
+        }
+        
+        /* FOOTER PERFECT GRID */
+        .footer-top { 
+            display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; margin-bottom: 50px; 
+        }
+
+        /* NEW FOOTER LOGO SHINING */
+        .footer-brand .logo { display: flex; align-items: flex-start; justify-content: flex-start; margin-bottom: 25px; }
+        .footer-brand .logo img { 
+            height: 75px; width: 75px; object-fit: cover; border-radius: 50%; 
+            border: 3px solid var(--neon-blue); background: #fff; padding: 4px;
+            box-shadow: 0 0 20px var(--neon-blue), inset 0 0 10px var(--neon-blue);
+            animation: logoShine 3s infinite alternate;
+        }
+
+        .footer-social { display: flex; gap: 15px; margin-top: 20px;}
         .footer-social a { background: rgba(255,255,255,0.05); border: 1px solid rgba(0,240,255,0.3); color: var(--text-light); box-shadow: 0 0 10px rgba(0,240,255,0.1); width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: var(--transition);}
         .footer-social a:hover { background: var(--gradient-2); border-color: #fff; box-shadow: var(--glow-pink); transform: translateY(-5px) rotate(360deg); color: #fff;}
+        
         .footer-title { color: #fff; font-size: 22px; position: relative; padding-bottom: 10px; margin-bottom: 25px;}
         .footer-title::after { content: ''; position: absolute; left: 0; bottom: 0; width: 40px; height: 3px; background: var(--gradient-3); box-shadow: var(--glow-mixed); }
+        
         .footer-links li { margin-bottom: 15px; }
         .footer-links a { color: var(--text-gray); display: flex; align-items: center; gap: 10px; transition: var(--transition); }
         .footer-links a:hover { color: var(--neon-blue); text-shadow: var(--glow-blue); padding-left: 10px; }
         .footer-links a::before { content: '\f105'; font-family: 'Font Awesome 6 Free'; font-weight: 900; color: var(--neon-pink); font-size: 12px;}
+        
         .footer-contact li { display: flex; align-items: flex-start; gap: 15px; margin-bottom: 20px; line-height: 1.6;}
         .footer-contact li i { background: var(--gradient-2); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-size: 22px; margin-top: 3px;}
         .footer-contact li span { color: #fff; }
-        .footer-newsletter { background: rgba(255,255,255,0.02); border: 1px solid rgba(176,38,255,0.3); box-shadow: 0 0 15px rgba(176,38,255,0.1); backdrop-filter: blur(10px); padding: 25px; border-radius: 10px;}
-        .news-form { display: flex; margin-top: 15px;}
-        .news-form input { flex: 1; padding: 12px 15px; background: rgba(0,0,0,0.5); color: #fff; border: 1px solid rgba(0,240,255,0.3); outline: none; border-radius: 5px 0 0 5px; }
-        .news-form button { padding: 12px 20px; border: none; background: var(--gradient-1); color: #000; box-shadow: var(--glow-blue); font-weight: 600; border-radius: 0 5px 5px 0; cursor: pointer; transition: var(--transition);}
-        .news-form button:hover { transform: scale(1.05); }
+        
+        /* Premium Pill-Shaped Newsletter */
+        .footer-newsletter { margin-top: 25px; }
+        .news-form { 
+            display: flex; align-items: center; border-radius: 50px; overflow: hidden; 
+            border: 2px solid rgba(0, 240, 255, 0.4); box-shadow: 0 0 15px rgba(0, 240, 255, 0.1); 
+            animation: boxGlow 4s infinite alternate;
+        }
+        .news-form input { flex: 1; padding: 15px 20px; background: rgba(0,0,0,0.6); color: #fff; border: none; outline: none; }
+        .news-form button { padding: 15px 25px; background: var(--gradient-1); color: #000; border: none; font-weight: 800; cursor: pointer; transition: var(--transition); }
+        .news-form button:hover { box-shadow: var(--glow-blue); }
+        
         .footer-bottom { border-top: 1px solid rgba(255,255,255,0.05); padding: 25px 0; text-align: center; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; margin-top: 50px; }
         .footer-bottom p span { color: var(--neon-blue); text-shadow: var(--glow-blue); font-weight: 700;}
         .footer-bottom-links a { color: var(--text-gray); margin-left: 20px; font-size: 14px; transition: var(--transition); }
-        .footer-bottom-links a:hover { color: #fff; }
+        .footer-bottom-links a:hover { color: #fff; text-shadow: var(--glow-blue); }
 
-        /* ================= MOBILE RESPONSIVE (MOBILE MENU ADDED) ================= */
+        /* ================= MOBILE RESPONSIVE ================= */
         @media (max-width: 1024px) {
             nav ul { gap: 10px; }
             nav ul li a { font-size: 11px; padding: 8px 12px; }
             .hero-content h1 { font-size: 55px; }
+            .footer-top { grid-template-columns: repeat(2, 1fr); } /* 2x2 grid on tablet for perfect balance */
         }
         @media (max-width: 991px) {
-            .footer-top { grid-template-columns: 1fr 1fr; }
             .hero-content h1 { font-size: 48px; }
         }
         @media (max-width: 768px) {
             .top-bar { flex-direction: column; gap: 10px; text-align: center; }
             .top-bar .contact-info span { display: block; margin: 5px 0 !important; }
             
-            /* Show Mobile Hamburger Menu Icon */
             .menu-toggle { display: block; }
             
             header { 
@@ -481,10 +501,8 @@
             }
             .logo img { height: 65px; width: 65px; }
 
-            /* Animated Mobile Dropdown Menu */
             nav { 
-                display: none !important; /* Hidden by default */
-                width: 100%; position: absolute; top: 110%; left: 0; 
+                display: none !important; width: 100%; position: absolute; top: 110%; left: 0; 
                 background: rgba(10, 15, 30, 0.95); backdrop-filter: blur(30px);
                 border: 2px solid var(--neon-blue); border-radius: 25px;
                 padding: 20px 0; box-shadow: 0 15px 40px rgba(0,0,0,0.9), var(--glow-blue);
@@ -494,7 +512,7 @@
             @keyframes fadeIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
 
             nav ul { flex-direction: column; gap: 10px; padding: 0 20px; }
-            nav ul:hover li a { transform: scale(1); opacity: 1; filter: none; } /* Disable fancy desktop blur on mobile */
+            nav ul:hover li a { transform: scale(1); opacity: 1; filter: none; }
             nav ul li a { text-align: center; font-size: 15px; padding: 12px; }
             nav ul li a:hover { transform: scale(1.05) !important; }
 
@@ -513,11 +531,16 @@
             .step-box { width: 100%; }
             .verify-form { flex-direction: column; }
             .verify-btn { padding: 20px; margin-top: 15px; }
-            .footer-top { grid-template-columns: 1fr; text-align: center; }
-            .footer-social, .footer-contact li, .footer-links a, .footer-brand .logo { justify-content: center; }
+            
+            /* Footer mobile alignment */
+            .footer-top { grid-template-columns: 1fr; text-align: center; gap: 50px; }
+            .footer-brand .logo { justify-content: center; }
+            .footer-social, .footer-contact li, .footer-links a { justify-content: center; }
+            .footer-contact li { flex-direction: column; align-items: center; }
             .footer-title::after { left: 50%; transform: translateX(-50%); }
             .footer-bottom { flex-direction: column; text-align: center; }
             .footer-bottom-links a { margin: 10px; display: inline-block; }
+            
             .modal-content { width: 95%; margin: 10px; }
             .modal-body { padding: 25px; }
             .modal-footer { flex-direction: column; gap: 15px; text-align: center; font-size: 16px; }
@@ -525,7 +548,7 @@
         @media (max-width: 480px) {
             .hero-content h1 { font-size: 32px; }
             .btn-hero { width: 100%; margin: 10px 0; }
-            .news-form { flex-direction: column; gap: 15px; }
+            .news-form { flex-direction: column; gap: 15px; border-radius: 15px; border: none;}
             .news-form input, .news-form button { border-radius: 12px; width: 100%; }
             .section-header h2 { font-size: 28px; }
         }
@@ -789,7 +812,7 @@
         </div>
     </section>
 
-    <!-- SECTION 7: MANAGEMENT TEAM (NEW & PERSONALIZED) -->
+    <!-- SECTION 7: MANAGEMENT TEAM -->
     <section id="management">
         <div class="section-header">
             <h2>Management <span>Team</span></h2>
@@ -935,7 +958,7 @@
         <div class="footer-top">
             
             <div class="footer-brand">
-                <div class="logo" style="margin-bottom:20px;">
+                <div class="logo">
                     <img src="logo.png" alt="Udaan Computer Academy Logo">
                 </div>
                 <p>Empowering the youth with premium IT skills. From deep coding to advanced accounting, we are committed to providing the highest quality education and securing your digital future.</p>
